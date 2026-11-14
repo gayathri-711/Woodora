@@ -1,0 +1,1235 @@
+/* ==========================================================================
+   WOODORA - Luxury Furniture Brand Stylesheet
+   Palette:
+   - Primary: Forest Green – #263D32
+   - Secondary: Warm Cream – #F7F4EE
+   - Accent: Walnut Brown – #805B42
+   - Beige: #E8DED0
+   - Text: #252525
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Jost:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+    --woodora-primary: #263D32;
+    --woodora-primary-dark: #1A2C23;
+    --woodora-primary-light: #375345;
+    --woodora-secondary: #F7F4EE;
+    --woodora-accent: #805B42;
+    --woodora-accent-hover: #674732;
+    --woodora-beige: #E8DED0;
+    --woodora-beige-light: #F4EFEB;
+    --woodora-text: #252525;
+    --woodora-text-muted: #66635D;
+    --woodora-gold: #C8A882;
+    --woodora-white: #FFFFFF;
+    --woodora-border: #E4DDD4;
+    --woodora-shadow: 0 10px 30px rgba(38, 61, 50, 0.08);
+    --woodora-shadow-hover: 0 16px 40px rgba(38, 61, 50, 0.14);
+
+    /* Override template variables */
+    --e-global-color-primary: #263D32;
+    --e-global-color-secondary: #252525;
+    --e-global-color-accent: #805B42;
+    --e-global-color-text: #252525;
+    --e-global-color-very-dark-cyan: #263D32;
+    --e-global-color-very-pale-red: #F7F4EE;
+    --e-global-color-very-pale-blue: #F7F4EE;
+    --e-global-color-light-grayish-cyan: #E8DED0;
+    --e-global-color-star-yellow: #C8A882;
+    --e-global-color-very-light-gray-white: #FAF8F5;
+    --e-global-color-nav-text: #263D32;
+    --e-global-color-light-grayish-green: #F4EFEB;
+}
+
+/* Base & Typography */
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    color: var(--woodora-text) !important;
+    background-color: #FFFFFF;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, .serif-heading {
+    font-family: 'Playfair Display', 'Jost', serif !important;
+    color: var(--woodora-primary) !important;
+    letter-spacing: -0.015em;
+}
+
+h6 {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    letter-spacing: 2.5px !important;
+    text-transform: uppercase !important;
+    color: var(--woodora-accent) !important;
+    font-weight: 600 !important;
+    font-size: 13px !important;
+}
+
+p, .text {
+    color: var(--woodora-text-muted) !important;
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+/* Announcement Top Bar */
+.top-bar-con {
+    background-color: var(--woodora-primary) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 0 !important;
+}
+
+.top-bar-con .top-bar-info p {
+    font-size: 13px !important;
+    letter-spacing: 0.5px;
+    color: var(--woodora-secondary) !important;
+    font-weight: 500 !important;
+}
+
+.top-bar-con .top-bar-info p span {
+    color: var(--woodora-gold) !important;
+    font-weight: 700;
+}
+
+/* Header & Navigation */
+.header {
+    background-color: #FFFFFF !important;
+    border-bottom: 1px solid var(--woodora-border);
+    padding: 16px 0 !important;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 12px rgba(38, 61, 50, 0.04);
+}
+
+.navbar-brand .logo img {
+    max-height: 52px;
+    width: auto;
+    object-fit: contain;
+}
+
+.navbar-nav .nav-item .nav-link {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 14.5px !important;
+    font-weight: 500 !important;
+    color: var(--woodora-text) !important;
+    padding: 8px 16px !important;
+    letter-spacing: 0.3px;
+    transition: color 0.25s ease;
+}
+
+.navbar-nav .nav-item .nav-link:hover,
+.navbar-nav .nav-item.active .nav-link {
+    color: var(--woodora-accent) !important;
+}
+
+.dropdown-menu.drop-down-content {
+    border: 1px solid var(--woodora-border) !important;
+    border-radius: 8px !important;
+    box-shadow: var(--woodora-shadow) !important;
+    padding: 12px 0 !important;
+    background: #FFFFFF !important;
+}
+
+.dropdown-item.nav-link {
+    font-size: 14px !important;
+    padding: 8px 22px !important;
+    color: var(--woodora-text) !important;
+    transition: all 0.2s ease;
+}
+
+.dropdown-item.nav-link:hover,
+.dropdown-item.nav-link.active {
+    background-color: var(--woodora-secondary) !important;
+    color: var(--woodora-accent) !important;
+    padding-left: 26px !important;
+}
+
+.last_list {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.last_list a {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--woodora-secondary);
+    color: var(--woodora-primary);
+    transition: all 0.3s ease;
+}
+
+.last_list a:hover {
+    background-color: var(--woodora-primary);
+    color: var(--woodora-secondary);
+    transform: translateY(-2px);
+}
+
+.last_list a i {
+    font-size: 16px;
+}
+
+.last_list .cart span {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background-color: var(--woodora-accent) !important;
+    color: #FFFFFF !important;
+    font-size: 11px;
+    font-weight: 700;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #FFFFFF;
+}
+
+/* Premium Buttons */
+.primary_btn {
+    background: var(--woodora-accent) !important;
+    color: #FFFFFF !important;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    letter-spacing: 1.2px !important;
+    text-transform: uppercase !important;
+    padding: 14px 34px !important;
+    border-radius: 4px !important;
+    border: 1px solid var(--woodora-accent) !important;
+    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    display: inline-block;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(128, 91, 66, 0.25);
+}
+
+.primary_btn:hover {
+    background: var(--woodora-primary) !important;
+    color: var(--woodora-secondary) !important;
+    border-color: var(--woodora-primary) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(38, 61, 50, 0.25);
+    text-decoration: none;
+}
+
+.secondary_btn {
+    background: transparent !important;
+    color: var(--woodora-primary) !important;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    letter-spacing: 1.2px !important;
+    text-transform: uppercase !important;
+    padding: 14px 32px !important;
+    border-radius: 4px !important;
+    border: 1.5px solid var(--woodora-primary) !important;
+    transition: all 0.3s ease !important;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.secondary_btn:hover {
+    background: var(--woodora-primary) !important;
+    color: #FFFFFF !important;
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+/* Hero Section */
+.banner-con {
+    background-color: var(--woodora-secondary) !important;
+    padding: 70px 0 100px 0 !important;
+}
+
+.banner_content h6 {
+    color: var(--woodora-accent) !important;
+    margin-bottom: 12px;
+}
+
+.banner_content h1 {
+    font-size: 56px !important;
+    line-height: 1.18 !important;
+    color: var(--woodora-primary) !important;
+    margin-bottom: 20px;
+}
+
+.banner_content p.text {
+    font-size: 18px !important;
+    line-height: 1.7 !important;
+    color: var(--woodora-text-muted) !important;
+    margin-bottom: 32px;
+}
+
+.banner_content .btn-group-custom {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.circle-text .content {
+    background: var(--woodora-primary) !important;
+}
+
+.circle-text .content span {
+    color: var(--woodora-secondary) !important;
+}
+
+/* Sub-banners */
+.sub_banner_con {
+    background-color: var(--woodora-secondary) !important;
+    padding: 80px 0 !important;
+    border-bottom: 1px solid var(--woodora-border);
+}
+
+.sub_banner_content h1 {
+    font-size: 46px !important;
+    color: var(--woodora-primary) !important;
+    margin-bottom: 14px;
+}
+
+.sub_banner_content .box {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    background: #FFFFFF;
+    border-radius: 30px;
+    border: 1px solid var(--woodora-border);
+}
+
+.sub_banner_content .box a,
+.sub_banner_content .box span {
+    font-size: 13.5px;
+    font-weight: 500;
+}
+
+.sub_banner_content .box a {
+    color: var(--woodora-text-muted);
+}
+
+.sub_banner_content .box a:hover {
+    color: var(--woodora-accent);
+}
+
+.sub_banner_content .box .box_span {
+    color: var(--woodora-accent);
+    font-weight: 600;
+}
+
+/* Category Cards */
+.categories-card {
+    background: #FFFFFF;
+    border: 1px solid var(--woodora-border);
+    border-radius: 8px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: all 0.35s ease;
+    display: block;
+    text-decoration: none !important;
+    height: 100%;
+}
+
+.categories-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--woodora-shadow-hover);
+    border-color: var(--woodora-accent);
+}
+
+.categories-card .category-icon {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 18px auto;
+    background: var(--woodora-secondary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: var(--woodora-primary);
+    transition: all 0.3s ease;
+}
+
+.categories-card:hover .category-icon {
+    background: var(--woodora-primary);
+    color: var(--woodora-secondary);
+}
+
+.categories-card h5 {
+    font-size: 18px;
+    margin-bottom: 6px;
+    color: var(--woodora-primary);
+    font-weight: 600;
+}
+
+.categories-card span.count {
+    font-size: 13px;
+    color: var(--woodora-text-muted);
+    font-weight: 500;
+}
+
+/* Modern Product Card */
+.woodora-product-card {
+    background: #FFFFFF;
+    border: 1px solid var(--woodora-border);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 30px);
+}
+
+.woodora-product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--woodora-shadow-hover);
+    border-color: #D2C4B5;
+}
+
+.woodora-product-card .card-thumb-wrapper {
+    position: relative;
+    background: var(--woodora-secondary);
+    padding: 0;
+    overflow: hidden;
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--woodora-border);
+}
+
+.woodora-product-card .card-thumb-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.woodora-product-card:hover .card-thumb-wrapper img {
+    transform: scale(1.08);
+}
+
+/* Category Image Thumb */
+.category-img-wrap {
+    overflow: hidden;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    height: 140px;
+}
+
+.category-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.categories-card:hover .category-img-wrap img {
+    transform: scale(1.08);
+}
+
+/* Hero Carousel Slide Image */
+.hero-slide-img {
+    width: 100%;
+    max-height: 460px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 16px 40px rgba(38, 61, 50, 0.16);
+    border: 1px solid var(--woodora-border);
+    transition: transform 0.5s ease;
+}
+
+.carousel-item:hover .hero-slide-img {
+    transform: scale(1.02);
+}
+
+.woodora-product-card .product-badges {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 2;
+}
+
+.product-badge {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding: 4px 10px;
+    border-radius: 3px;
+    line-height: 1.2;
+}
+
+.badge-discount {
+    background: var(--woodora-accent);
+    color: #FFFFFF;
+}
+
+.badge-new {
+    background: var(--woodora-primary);
+    color: var(--woodora-secondary);
+}
+
+.badge-solidwood {
+    background: #554437;
+    color: #F7F4EE;
+}
+
+.woodora-product-card .product-actions {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 2;
+}
+
+.action-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    color: var(--woodora-primary);
+    border: 1px solid var(--woodora-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.action-btn:hover,
+.action-btn.active {
+    background: var(--woodora-primary);
+    color: #FFFFFF;
+    border-color: var(--woodora-primary);
+}
+
+.action-btn.wishlist-toggle.active {
+    background: #B83A2E;
+    color: #FFFFFF;
+    border-color: #B83A2E;
+}
+
+.woodora-product-card .card-body-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.woodora-product-card .category-tag {
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--woodora-accent);
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.woodora-product-card .product-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--woodora-primary);
+    margin-bottom: 10px;
+    line-height: 1.35;
+    transition: color 0.2s ease;
+}
+
+.woodora-product-card .product-title:hover {
+    color: var(--woodora-accent);
+    text-decoration: none;
+}
+
+.woodora-product-card .rating-row {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    color: var(--woodora-gold);
+    margin-bottom: 12px;
+}
+
+.woodora-product-card .rating-row span.count {
+    color: var(--woodora-text-muted);
+    font-size: 12px;
+    margin-left: 4px;
+}
+
+.woodora-product-card .price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px solid var(--woodora-beige-light);
+}
+
+.woodora-product-card .current-price {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--woodora-primary);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.woodora-product-card .original-price {
+    font-size: 14px;
+    color: #9E9B95;
+    text-decoration: line-through;
+}
+
+.woodora-product-card .add-to-cart-bar {
+    margin-top: 14px;
+}
+
+.woodora-product-card .btn-quick-cart {
+    width: 100%;
+    background: var(--woodora-secondary);
+    color: var(--woodora-primary);
+    border: 1px solid var(--woodora-border);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    padding: 10px 16px;
+    border-radius: 4px;
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.woodora-product-card .btn-quick-cart:hover {
+    background: var(--woodora-accent);
+    color: #FFFFFF;
+    border-color: var(--woodora-accent);
+}
+
+/* Legacy .feature-box overrides */
+.feature-box {
+    background: #FFFFFF !important;
+    border: 1px solid var(--woodora-border) !important;
+    border-radius: 8px !important;
+    overflow: hidden;
+    transition: all 0.3s ease !important;
+    padding-bottom: 16px;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--woodora-shadow-hover);
+}
+
+.feature-box .image {
+    background: var(--woodora-secondary) !important;
+    border-radius: 6px 6px 0 0;
+}
+
+.feature-box h4 {
+    font-family: 'Playfair Display', serif !important;
+    color: var(--woodora-primary) !important;
+}
+
+.feature-box .price .price1 {
+    color: var(--woodora-primary) !important;
+    font-weight: 700;
+}
+
+.feature-box .price .price2 {
+    color: #9E9B95 !important;
+}
+
+/* Why Choose Woodora */
+.choose-con {
+    background-color: var(--woodora-secondary) !important;
+    padding: 100px 0 !important;
+}
+
+.choose-box {
+    background: #FFFFFF;
+    border: 1px solid var(--woodora-border);
+    border-radius: 8px;
+    padding: 36px 28px;
+    text-align: center;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.choose-box:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--woodora-shadow-hover);
+    border-color: var(--woodora-accent);
+}
+
+.choose-box .icon-wrap {
+    width: 70px;
+    height: 70px;
+    background: var(--woodora-secondary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    font-size: 26px;
+    color: var(--woodora-accent);
+}
+
+.choose-box h4 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: var(--woodora-primary);
+}
+
+.choose-box p {
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
+/* Testimonials */
+.testimonial-con {
+    background-color: #FFFFFF !important;
+    padding: 100px 0 !important;
+}
+
+.testimonial-card-luxury {
+    background: var(--woodora-secondary);
+    border: 1px solid var(--woodora-border);
+    border-radius: 10px;
+    padding: 40px 32px;
+    position: relative;
+    height: 100%;
+}
+
+.testimonial-card-luxury .stars {
+    color: var(--woodora-gold);
+    font-size: 16px;
+    margin-bottom: 18px;
+}
+
+.testimonial-card-luxury p.quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--woodora-primary);
+    font-style: italic;
+    margin-bottom: 24px;
+}
+
+.testimonial-card-luxury .author-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.testimonial-card-luxury .author-info img {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--woodora-gold);
+}
+
+.testimonial-card-luxury .author-info h5 {
+    font-size: 16px;
+    margin-bottom: 2px;
+    color: var(--woodora-primary);
+}
+
+.testimonial-card-luxury .author-info span {
+    font-size: 13px;
+    color: var(--woodora-text-muted);
+}
+
+/* Newsletter Section */
+.update-con {
+    background: var(--woodora-primary) !important;
+    color: var(--woodora-secondary) !important;
+    padding: 80px 0 !important;
+}
+
+.update-con h2 {
+    color: var(--woodora-secondary) !important;
+}
+
+.update-con p {
+    color: rgba(247, 244, 238, 0.8) !important;
+}
+
+.update-con .newsletter-form {
+    display: flex;
+    gap: 10px;
+    max-width: 540px;
+    margin: 0 auto;
+}
+
+.update-con .newsletter-form input {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #FFFFFF;
+    padding: 14px 20px;
+    border-radius: 4px;
+    flex-grow: 1;
+    font-size: 15px;
+}
+
+.update-con .newsletter-form input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.update-con .newsletter-form input:focus {
+    outline: none;
+    border-color: var(--woodora-gold);
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.update-con .newsletter-form button {
+    background: var(--woodora-accent);
+    color: #FFFFFF;
+    border: none;
+    padding: 14px 28px;
+    font-weight: 600;
+    font-size: 13.5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.update-con .newsletter-form button:hover {
+    background: var(--woodora-gold);
+    color: var(--woodora-primary);
+}
+
+/* Footer */
+.footer-con {
+    background-color: var(--woodora-primary-dark) !important;
+    color: var(--woodora-secondary) !important;
+    padding: 90px 0 30px 0 !important;
+}
+
+.footer-con .footer-logo img {
+    max-height: 52px;
+    margin-bottom: 20px;
+}
+
+.footer-con p {
+    color: rgba(247, 244, 238, 0.75) !important;
+    font-size: 14.5px;
+}
+
+.footer-con h4 {
+    color: var(--woodora-secondary) !important;
+    font-size: 18px;
+    font-family: 'Playfair Display', serif !important;
+    margin-bottom: 24px;
+    letter-spacing: 0.5px;
+}
+
+.footer-con ul.list-unstyled li {
+    margin-bottom: 12px;
+}
+
+.footer-con ul.list-unstyled li a {
+    color: rgba(247, 244, 238, 0.75) !important;
+    font-size: 14px;
+    transition: all 0.25s ease;
+    text-decoration: none;
+}
+
+.footer-con ul.list-unstyled li a:hover {
+    color: var(--woodora-gold) !important;
+    padding-left: 6px;
+}
+
+.footer-con .social-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.footer-con .social-links a {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--woodora-secondary);
+    transition: all 0.3s ease;
+}
+
+.footer-con .social-links a:hover {
+    background: var(--woodora-accent);
+    color: #FFFFFF;
+    transform: translateY(-3px);
+}
+
+.footer-con .footer-bottom {
+    margin-top: 60px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.footer-con .footer-bottom p {
+    margin-bottom: 0;
+    font-size: 13px;
+    color: rgba(247, 244, 238, 0.6) !important;
+}
+
+.footer-con .payment-badges {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.footer-con .payment-badges i {
+    font-size: 22px;
+    color: rgba(247, 244, 238, 0.65);
+}
+
+/* Woodora Toast Notification */
+#woodora-toast {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    background: var(--woodora-primary);
+    color: var(--woodora-secondary);
+    padding: 16px 24px;
+    border-radius: 8px;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    z-index: 99999;
+    transform: translateY(120%);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border-left: 4px solid var(--woodora-accent);
+}
+
+#woodora-toast.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+#woodora-toast .toast-icon {
+    font-size: 22px;
+    color: var(--woodora-gold);
+}
+
+#woodora-toast .toast-text {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#woodora-toast .toast-view-btn {
+    background: var(--woodora-accent);
+    color: #FFFFFF;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    margin-left: 8px;
+    transition: background 0.2s ease;
+}
+
+#woodora-toast .toast-view-btn:hover {
+    background: var(--woodora-gold);
+    color: var(--woodora-primary);
+}
+
+/* Shop Filters & Sidebar */
+.shop-con .sidebar .widget {
+    background: #FFFFFF;
+    border: 1px solid var(--woodora-border);
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.shop-con .sidebar .widget-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--woodora-primary);
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--woodora-border);
+}
+
+.shop-con .sidebar .cat-item {
+    margin-bottom: 8px;
+}
+
+.shop-con .sidebar .cat-item a {
+    color: var(--woodora-text) !important;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 10px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.shop-con .sidebar .cat-item a:hover,
+.shop-con .sidebar .cat-item.active a {
+    background: var(--woodora-secondary);
+    color: var(--woodora-accent) !important;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   Comprehensive Responsive Overrides (Desktop, Laptop, Tablet, Mobile)
+   ========================================================================== */
+
+/* Laptop & Medium Desktop (992px to 1199px) */
+@media (max-width: 1199px) {
+    .banner_content h1 {
+        font-size: 46px !important;
+    }
+    .categories-con .categories-box {
+        margin-bottom: 20px;
+    }
+    .woodora-product-card .card-thumb-wrapper {
+        min-height: 220px;
+    }
+}
+
+/* Tablet Screens (768px to 991px) */
+@media (max-width: 991px) {
+    .header {
+        padding: 12px 0 !important;
+    }
+    .header .navbar-nav {
+        background: #FFFFFF;
+        padding: 15px 0;
+        border-top: 1px solid var(--woodora-border);
+    }
+    .header .navbar-nav .nav-item {
+        padding: 8px 15px;
+    }
+    .header .last_list {
+        margin-top: 15px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+    .banner_content h1 {
+        font-size: 38px !important;
+        line-height: 1.25 !important;
+    }
+    .sub_banner_content h1 {
+        font-size: 34px !important;
+    }
+    .banner-con {
+        padding: 40px 0 60px 0 !important;
+    }
+    .choose_wrapper {
+        margin-top: 30px;
+    }
+    .shop-con .sidebar {
+        margin-bottom: 40px;
+    }
+    .checkout-con .order-summary-box {
+        margin-top: 40px;
+    }
+}
+
+/* Small Tablets & Large Mobile Phones (576px to 767px) */
+@media (max-width: 767px) {
+    .top-bar-con .top-bar-box {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+    .top-bar-con .top-bar-social {
+        display: none;
+    }
+    .banner_content h1 {
+        font-size: 32px !important;
+        line-height: 1.25 !important;
+    }
+    .banner_content p.text-size-18 {
+        font-size: 15px !important;
+    }
+    .btn-group-custom {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .btn-group-custom a {
+        width: 100%;
+        text-align: center;
+    }
+    .categories-card {
+        padding: 20px 14px;
+    }
+    .woodora-product-card {
+        margin-bottom: 25px;
+    }
+    .woodora-product-card .card-thumb-wrapper {
+        min-height: 200px;
+    }
+    /* Cart page table responsive stacking */
+    .cart-con .shopping-cart .product {
+        display: flex !important;
+        flex-direction: column;
+        align-items: flex-start !important;
+        position: relative;
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--woodora-border);
+        margin-bottom: 20px;
+    }
+    .cart-con .shopping-cart .product .product-details {
+        width: 100% !important;
+        margin-bottom: 12px;
+    }
+    .cart-con .shopping-cart .product .product-price,
+    .cart-con .shopping-cart .product .product-quantity,
+    .cart-con .shopping-cart .product .product-line-price {
+        width: auto !important;
+        margin-bottom: 8px;
+    }
+    .cart-con .shopping-cart .product .product-removal {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    .footer-con .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+}
+
+/* Mobile Phones (< 576px) */
+@media (max-width: 575px) {
+    .header .navbar-brand img {
+        max-height: 38px;
+    }
+    .banner_content h1 {
+        font-size: 28px !important;
+    }
+    .sub_banner_content h1 {
+        font-size: 26px !important;
+    }
+    .sub_banner_con {
+        padding: 40px 0 !important;
+    }
+    .categories-card .categories-title {
+        font-size: 16px;
+    }
+    .category-img-wrap {
+        height: 110px;
+    }
+    .hero-slide-img {
+        max-height: 280px;
+    }
+    #myTabContent {
+        height: 280px !important;
+    }
+    #myTab .nav-link {
+        width: 65px !important;
+        height: 65px !important;
+    }
+    .woodora-product-card .card-thumb-wrapper {
+        height: 180px;
+    }
+    .woodora-product-card .product-title {
+        font-size: 16px;
+    }
+    .woodora-product-card .price-row .current-price {
+        font-size: 17px;
+    }
+    #woodora-toast {
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+        padding: 12px 18px;
+    }
+    #woodora-toast .toast-text {
+        font-size: 13px;
+    }
+    .product-detail-box, .cart-summary, .checkout-box {
+        padding: 20px !important;
+    }
+    .modal-dialog {
+        margin: 10px;
+    }
+}
+
+/* User Authentication Pill & Modal Controls */
+.user-auth-pill {
+    transition: all 0.2s ease;
+}
+.user-auth-pill:hover {
+    background: #E8DED0 !important;
+}
+.btn-woodora-logout {
+    opacity: 0.7;
+    transition: opacity 0.2s ease, color 0.2s ease;
+}
+.btn-woodora-logout:hover {
+    opacity: 1;
+    color: #805B42 !important;
+}
+
+/* Modal styling */
+#woodora-auth-modal .modal-content {
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+#woodora-auth-modal .nav-pills .nav-link.active {
+    background-color: var(--woodora-primary) !important;
+    color: var(--woodora-secondary) !important;
+}
+#woodora-auth-modal .form-control:focus {
+    border-color: var(--woodora-accent);
+    box-shadow: 0 0 0 0.2rem rgba(128, 91, 66, 0.15);
+}
+
+/* Swatches and Configurations on Mobile */
+@media (max-width: 575px) {
+    .types_content .sizes ul {
+        flex-wrap: wrap;
+    }
+    .types_content .sizes li {
+        margin-bottom: 8px;
+        font-size: 12px !important;
+        padding: 6px 10px !important;
+    }
+    .types_content .colors li {
+        width: 28px !important;
+        height: 28px !important;
+    }
+    .auth-split-wrapper {
+        min-height: auto;
+    }
+}
+

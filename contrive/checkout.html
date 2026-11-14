@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Checkout | WOODORA</title>
+    <!-- SEO & Metadata -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta charset="utf-8">
+    <meta name="description" content="Secure Checkout for your WOODORA luxury furniture curation. White Glove In-Home Delivery and 10-Year Craftsmanship Guarantee.">
+    
+    <!-- Favicon Icons -->
+    <link rel="icon" type="image/svg+xml" href="./assets/images/favicon/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon/apple-icon-180x180.png">
+    <link rel="manifest" href="./assets/images/favicon/manifest.json">
+    <meta name="theme-color" content="#263D32">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Jost:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <!-- CSS Dependencies -->
+    <link href="assets/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="assets/css/aos.css" rel="stylesheet">
+    <!-- Main StyleSheets -->
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/shop.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/responsive.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/woodora.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<!-- Back to top button -->
+<a id="button"><i class="fa-solid fa-angle-up"></i></a>
+
+<div class="sub_banner position-relative">
+    <!-- Header Navigation -->
+    <header class="header sticky-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light p-0">
+                <a class="navbar-brand" href="index.html">
+                    <figure class="logo mb-0">
+                        <img src="assets/images/logo.svg" alt="WOODORA" class="img-fluid" onerror="this.onerror=null; this.src='assets/images/logo.png'">
+                    </figure>
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+                        <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog.html">Journal</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="last_list ml-lg-4">
+                    <a class="cart" href="./cart.html" title="Shopping Cart"><i class="fa-solid fa-bag-shopping"></i><span>3</span></a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sub-banner -->
+    <section class="sub_banner_con position-relative py-5">
+        <div class="container text-center">
+            <div class="sub_banner_content" data-aos="fade-up">
+                <h6>Order Processing</h6>
+                <h1>Secure Checkout</h1>
+                <div class="box mt-3">
+                    <a href="index.html" class="text-decoration-none"><span>Home</span></a>
+                    <span class="slash">/</span>
+                    <a href="cart.html" class="text-decoration-none"><span>Cart</span></a>
+                    <span class="slash">/</span>
+                    <span class="box_span">Checkout</span>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Checkout Section -->
+<div class="checkout-con position-relative py-5">
+    <div class="container py-3">
+        <div class="row">
+            <!-- Left: Delivery Details Form -->
+            <div class="col-lg-7 col-12 mb-5 mb-lg-0">
+                <div class="bg-white p-4 rounded shadow-sm" style="border: 1px solid #E8DED0;" data-aos="fade-up">
+                    <h4 class="pb-3 border-bottom mb-4" style="font-family: 'Playfair Display', serif; color: #263D32;">1. Delivery Address & Client Details</h4>
+
+                    <form id="checkout-form" novalidate>
+                        <div class="row">
+                            <div class="col-md-6 col-12 form-group mb-3">
+                                <label class="font-size-14 font-weight-600 text-dark">First Name <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" name="first_name" required placeholder="Eleanor" style="border-color: #E8DED0;">
+                            </div>
+                            <div class="col-md-6 col-12 form-group mb-3">
+                                <label class="font-size-14 font-weight-600 text-dark">Last Name <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" name="last_name" required placeholder="Vance" style="border-color: #E8DED0;">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 col-12 form-group mb-3">
+                                <label class="font-size-14 font-weight-600 text-dark">Email Address <span class="text-danger">*</span></label>
+                                <input type="email" class="form-control" name="email" required placeholder="eleanor.vance@example.com" style="border-color: #E8DED0;">
+                            </div>
+                            <div class="col-md-6 col-12 form-group mb-3">
+                                <label class="font-size-14 font-weight-600 text-dark">Phone Number <span class="text-danger">*</span></label>
+                                <input type="tel" class="form-control" name="phone" required placeholder="+1 (555) 234-5678" style="border-color: #E8DED0;">
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label class="font-size-14 font-weight-600 text-dark">Street Address <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control mb-2" name="address" required placeholder="House number and street name" style="border-color: #E8DED0;">
+                            <input type="text" class="form-control" name="address_2" placeholder="Apartment, suite, unit (optional)" style="border-color: #E8DED0;">
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-5 col-12 form-group mb-3">
+                                <label class="font-size-14 font-weight-600 text-dark">City <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" name="city" required placeholder="New York" style="border-color: #E8DED0;">
+                            </div>
+                            <div class="col-md-4 col-6 form-group mb-3">
+                                <label class="font-size-14 font-weight-600 text-dark">State / Region <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" name="state" required placeholder="NY" style="border-color: #E8DED0;">
+                            </div>
+                            <div class="col-md-3 col-6 form-group mb-3">
+                                <label class="font-size-14 font-weight-600 text-dark">Postal Code <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" name="zip" required placeholder="10017" style="border-color: #E8DED0;">
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label class="font-size-14 font-weight-600 text-dark">Special Delivery Instructions (Optional)</label>
+                            <textarea class="form-control" name="notes" rows="2" placeholder="Floor level, elevator access, or placement preferences for our White Glove team..." style="border-color: #E8DED0;"></textarea>
+                        </div>
+
+                        <h4 class="pb-3 border-bottom mb-4 pt-3" style="font-family: 'Playfair Display', serif; color: #263D32;">2. Payment Method</h4>
+
+                        <!-- Payment Methods Selection -->
+                        <div class="payment-methods mb-4">
+                            <!-- Option 1: Credit Card -->
+                            <div class="custom-control custom-radio p-3 mb-2 rounded" style="background: #F7F4EE; border: 1px solid #E8DED0;">
+                                <input type="radio" id="pay-card" name="payment_method" class="custom-control-input" value="card" checked>
+                                <label class="custom-control-label font-weight-bold d-flex justify-content-between align-items-center w-100" for="pay-card">
+                                    <span>Credit / Debit Card</span>
+                                    <span class="font-size-18 text-muted"><i class="fa-brands fa-cc-visa"></i> <i class="fa-brands fa-cc-mastercard"></i> <i class="fa-brands fa-cc-amex"></i></span>
+                                </label>
+                                <div class="card-details-mock mt-3 pt-3 border-top" id="card-fields">
+                                    <div class="form-group mb-2">
+                                        <input type="text" class="form-control form-control-sm" placeholder="Cardholder Name">
+                                    </div>
+                                    <div class="form-group mb-2">
+                                        <input type="text" class="form-control form-control-sm" placeholder="Card Number (•••• •••• •••• ••••)">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6"><input type="text" class="form-control form-control-sm" placeholder="MM / YY"></div>
+                                        <div class="col-6"><input type="text" class="form-control form-control-sm" placeholder="CVV / CVC"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Option 2: Apple Pay / Google Pay -->
+                            <div class="custom-control custom-radio p-3 mb-2 rounded" style="background: #FFFFFF; border: 1px solid #E8DED0;">
+                                <input type="radio" id="pay-express" name="payment_method" class="custom-control-input" value="express">
+                                <label class="custom-control-label font-weight-bold d-flex justify-content-between align-items-center w-100" for="pay-express">
+                                    <span>Apple Pay / Google Pay</span>
+                                    <span class="font-size-18 text-muted"><i class="fa-brands fa-cc-apple-pay"></i> <i class="fa-brands fa-google-pay"></i></span>
+                                </label>
+                            </div>
+
+                            <!-- Option 3: Direct Bank Wire -->
+                            <div class="custom-control custom-radio p-3 mb-2 rounded" style="background: #FFFFFF; border: 1px solid #E8DED0;">
+                                <input type="radio" id="pay-wire" name="payment_method" class="custom-control-input" value="wire">
+                                <label class="custom-control-label font-weight-bold" for="pay-wire">
+                                    Direct Bank Wire Transfer (Showroom Orders)
+                                </label>
+                            </div>
+
+                            <!-- Option 4: Cash on Delivery -->
+                            <div class="custom-control custom-radio p-3 rounded" style="background: #FFFFFF; border: 1px solid #E8DED0;">
+                                <input type="radio" id="pay-cod" name="payment_method" class="custom-control-input" value="cod">
+                                <label class="custom-control-label font-weight-bold" for="pay-cod">
+                                    Payment upon White Glove Inspection
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Technical Payment Note (Preserving requirements) -->
+                        <div class="alert alert-light border p-3 font-size-12" style="background: #F4EFEB; border-color: #D2C4B5 !important; color: #554437;">
+                            <i class="fa-solid fa-circle-info mr-1" style="color: #805B42;"></i>
+                            <strong>Payment Gateway Note:</strong> In production, connect this form to your Stripe API Secret Key or PayPal SDK via PHP backend webhook handlers. Currently simulated in sandbox mode for full order placement demonstration.
+                        </div>
+
+                        <button type="button" id="place-order-btn" class="primary_btn w-100 text-center py-3 font-size-16" style="letter-spacing: 1.5px;">
+                            <i class="fa-solid fa-lock mr-2"></i> Place Order & Schedule Delivery
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Right: Order Review -->
+            <div class="col-lg-5 col-12">
+                <div class="order-review-card bg-white p-4 rounded shadow-sm" style="border: 1px solid #E8DED0;" data-aos="fade-up">
+                    <h4 class="pb-3 border-bottom mb-3" style="font-family: 'Playfair Display', serif; color: #263D32;">Order Review</h4>
+
+                    <div class="table-responsive">
+                        <table class="table order-review-table mb-0">
+                            <thead>
+                                <tr class="font-size-12 text-muted text-uppercase" style="letter-spacing: 0.8px;">
+                                    <th>Curation</th>
+                                    <th class="text-right">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Populated dynamically by woodora.js -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="border-top pt-3 mt-3">
+                        <div class="d-flex justify-content-between mb-2 font-size-14">
+                            <span class="text-muted">Subtotal</span>
+                            <span class="checkout-subtotal font-weight-bold text-dark">$1,710.00</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2 font-size-14">
+                            <span class="text-muted">White Glove Delivery</span>
+                            <span class="checkout-shipping font-weight-bold text-success">FREE</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-3 font-size-14">
+                            <span class="text-muted">Estimated Tax (5%)</span>
+                            <span class="checkout-tax font-weight-bold text-dark">$85.50</span>
+                        </div>
+                        <div class="border-top pt-3 d-flex justify-content-between align-items-baseline mb-4">
+                            <span class="font-weight-bold font-size-18 text-dark">Total Due</span>
+                            <span class="checkout-total font-weight-bold" style="font-size: 26px; color: #263D32;">$1,795.50</span>
+                        </div>
+                    </div>
+
+                    <!-- Guarantee Badges -->
+                    <div class="p-3 rounded" style="background: #F7F4EE; border: 1px solid #E8DED0;">
+                        <div class="d-flex align-items-center mb-2 font-size-13 font-weight-500">
+                            <i class="fa-solid fa-shield-halved mr-2" style="color: #805B42;"></i> 10-Year Craftsmanship Warranty
+                        </div>
+                        <div class="d-flex align-items-center mb-2 font-size-13 font-weight-500">
+                            <i class="fa-solid fa-truck-ramp-box mr-2" style="color: #263D32;"></i> White Glove Room-of-Choice Delivery
+                        </div>
+                        <div class="d-flex align-items-center font-size-13 font-weight-500">
+                            <i class="fa-solid fa-rotate-left mr-2" style="color: #805B42;"></i> 30-Day Risk-Free In-Home Trial
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer-con position-relative">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-12 mb-4 mb-lg-0">
+                <div class="footer-logo mb-3">
+                    <a href="index.html">
+                        <img src="assets/images/footer-logo.svg" alt="WOODORA" onerror="this.onerror=null; this.src='assets/images/footer-logo.png'">
+                    </a>
+                </div>
+                <p>WOODORA crafts sustainable solid hardwood furniture and soulful interiors designed to endure for generations.</p>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-12 text-lg-right">
+                <p class="mb-1"><i class="fa-solid fa-phone mr-2" style="color: #C8A882;"></i> +1 (800) 966-3672</p>
+                <p class="mb-0"><i class="fa-solid fa-envelope mr-2" style="color: #C8A882;"></i> concierge@woodora.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 WOODORA Inc. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="assets/js/jquery-3.7.1.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/aos.js"></script>
+<script src="assets/js/back-to-top-button.js"></script>
+<script src="assets/js/woodora.js"></script>
+
+<script>
+    AOS.init({ duration: 800, once: true });
+</script>
+</body>
+</html>

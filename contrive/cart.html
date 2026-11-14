@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Shopping Cart | WOODORA</title>
+    <!-- SEO & Metadata -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta charset="utf-8">
+    <meta name="description" content="Review your curated WOODORA furniture selections. Handcrafted solid oak, walnut dining, and designer sofas ready for White Glove Delivery.">
+    
+    <!-- Favicon Icons -->
+    <link rel="icon" type="image/svg+xml" href="./assets/images/favicon/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon/apple-icon-180x180.png">
+    <link rel="manifest" href="./assets/images/favicon/manifest.json">
+    <meta name="theme-color" content="#263D32">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Jost:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <!-- CSS Dependencies -->
+    <link href="assets/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="assets/css/aos.css" rel="stylesheet">
+    <!-- Main StyleSheets -->
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/shop.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/responsive.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/woodora.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<!-- Back to top button -->
+<a id="button"><i class="fa-solid fa-angle-up"></i></a>
+
+<div class="sub_banner position-relative">
+    <!-- Top Bar -->
+    <div class="top-bar-con">
+        <div class="container">
+            <div class="top-bar-box">
+                <div class="top-bar-info">
+                    <p class="text mb-0">
+                        <i class="fa-solid fa-truck-fast mr-2"></i> Complimentary White Glove Delivery on orders over <span>$500</span> | Use code <strong>WOODORA10</strong>
+                    </p>
+                </div>
+                <div class="top-bar-social d-none d-md-block">
+                    <div class="other_list">
+                        <div class="country-selector lang-dropdown">
+                            <div class="caption text-white"><img src="./assets/images/header-flag2.png" alt="USA"> USD ($)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="header sticky-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light p-0">
+                <a class="navbar-brand" href="index.html">
+                    <figure class="logo mb-0">
+                        <img src="assets/images/logo.svg" alt="WOODORA" class="img-fluid" onerror="this.onerror=null; this.src='assets/images/logo.png'">
+                    </figure>
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="shop.html">Shop</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="portfolio.html">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="services.html">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About Us</a>
+                        </li>
+                        <li class="nav-item dropdown active">
+                            <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Pages <i class="fa-solid fa-angle-down ml-1 font-size-12"></i>
+                            </a>
+                            <div class="dropdown-menu drop-down-content" aria-labelledby="pagesDropdown">
+                                <ul class="list-unstyled drop-down-pages">
+                                    <li><a class="dropdown-item nav-link active" href="cart.html">Shopping Cart</a></li>
+                                    <li><a class="dropdown-item nav-link" href="checkout.html">Checkout</a></li>
+                                    <li><a class="dropdown-item nav-link" href="faq.html">FAQ & Care</a></li>
+                                    <li><a class="dropdown-item nav-link" href="team.html">Our Artisans</a></li>
+                                    <li><a class="dropdown-item nav-link" href="login.html">Client Login</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blog.html">Journal</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="last_list ml-lg-4">
+                    <a class="search" href="shop.html" title="Search"><i class="fa-solid fa-magnifying-glass"></i></a>
+                    <a class="cart" href="./cart.html" title="Shopping Cart"><i class="fa-solid fa-bag-shopping"></i><span>3</span></a>
+                    <a class="admin" href="./login.html" title="Account"><i class="fa-regular fa-user"></i></a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sub-banner -->
+    <section class="sub_banner_con position-relative py-5">
+        <figure class="subbanner-leftimage image mb-0 d-none d-lg-block">
+            <img src="./assets/images/update-leftimage.png" class="img-fluid" alt="Botanical">
+        </figure>
+        <figure class="subbanner-rightimage image mb-0 d-none d-lg-block">
+            <img src="./assets/images/about-rightimage.png" class="img-fluid" alt="Botanical">
+        </figure>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-8 col-12 mx-auto text-center">
+                    <div class="sub_banner_content" data-aos="fade-up">
+                        <h6>Your Curations</h6>
+                        <h1>Shopping Cart</h1>
+                        <div class="box mt-3">
+                            <a href="index.html" class="text-decoration-none"><span>Home</span></a>
+                            <span class="slash">/</span>
+                            <span class="box_span">Cart</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Cart Main Section -->
+<div class="cart-con position-relative py-5">
+    <div class="container">
+        <div class="row">
+            <!-- Left: Cart Items Table -->
+            <div class="col-lg-8 col-12 mb-5 mb-lg-0">
+                <div class="product-detail-box bg-white p-4 rounded shadow-sm" style="border: 1px solid #E8DED0;" data-aos="fade-up">
+                    <div class="heading d-flex justify-content-between align-items-center pb-3 border-bottom">
+                        <h4 class="mb-0" style="font-family: 'Playfair Display', serif; color: #263D32;">Curated Selections</h4>
+                        <span class="font-weight-bold" style="color: #805B42;">(03 Items)</span>
+                    </div>
+
+                    <div class="shopping-cart mt-3">
+                        <div class="column-labels d-none d-md-flex py-2 border-bottom font-weight-bold font-size-13 text-muted" style="text-transform: uppercase; letter-spacing: 0.8px;">
+                            <label class="product-details mb-0" style="width: 44%;">Furniture Piece</label>
+                            <label class="product-price mb-0 text-center" style="width: 18%;">Price</label>
+                            <label class="product-quantity mb-0 text-center" style="width: 18%;">Quantity</label>
+                            <label class="product-line-price mb-0 text-center" style="width: 15%;">Total</label>
+                            <label class="product-removal mb-0" style="width: 5%;"></label>
+                        </div>
+
+                        <!-- Dynamic Items Container -->
+                        <div class="shopping-cart-info">
+                            <!-- Populated dynamically by woodora.js -->
+                        </div>
+                    </div>
+
+                    <!-- Cart Actions Row: Promo Code & Continue Shopping -->
+                    <div class="row align-items-center mt-4 pt-3 border-top">
+                        <div class="col-md-7 col-12 mb-3 mb-md-0">
+                            <form class="d-flex" onsubmit="event.preventDefault();">
+                                <input type="text" id="coupon-code-input" class="form-control mr-2" placeholder="Promo code (e.g. WOODORA10)" style="max-width: 260px; border-color: #E8DED0;">
+                                <button type="button" id="apply-coupon-btn" class="btn" style="background: #263D32; color: #FFFFFF; font-weight: 600; font-size: 13px; text-transform: uppercase;">Apply</button>
+                            </form>
+                            <small class="text-muted mt-1 d-block">Enter code <strong>WOODORA10</strong> for 10% welcome privilege.</small>
+                        </div>
+                        <div class="col-md-5 col-12 text-md-right">
+                            <a href="shop.html" class="secondary_btn btn-sm"><i class="fa-solid fa-arrow-left mr-1"></i> Continue Shopping</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Order Summary -->
+            <div class="col-lg-4 col-12">
+                <div class="cart-summary p-4 rounded bg-white shadow-sm" style="border: 1px solid #E8DED0;" data-aos="fade-up">
+                    <h4 class="pb-3 border-bottom mb-3" style="font-family: 'Playfair Display', serif; color: #263D32;">Order Summary</h4>
+
+                    <div class="d-flex justify-content-between mb-2 font-size-15">
+                        <span class="text-muted">Subtotal</span>
+                        <span id="cart-subtotal" class="font-weight-bold text-dark">$1,710.00</span>
+                    </div>
+
+                    <div id="cart-discount-row" class="d-flex justify-content-between mb-2 font-size-15 text-success" style="display: none !important;">
+                        <span>Privilege Discount (10%)</span>
+                        <span class="discount-val font-weight-bold">-$0.00</span>
+                    </div>
+
+                    <div class="d-flex justify-content-between mb-2 font-size-15">
+                        <span class="text-muted">Estimated Tax (5%)</span>
+                        <span id="cart-tax" class="font-weight-bold text-dark">$85.50</span>
+                    </div>
+
+                    <div class="d-flex justify-content-between mb-3 font-size-15">
+                        <span class="text-muted">White Glove Delivery</span>
+                        <span id="cart-shipping" class="font-weight-bold text-success">FREE</span>
+                    </div>
+
+                    <div class="border-top pt-3 mb-4 d-flex justify-content-between align-items-baseline">
+                        <span class="font-weight-bold font-size-18 text-dark">Estimated Total</span>
+                        <span id="cart-total" class="font-weight-bold" style="font-size: 26px; color: #263D32;">$1,795.50</span>
+                    </div>
+
+                    <a href="checkout.html" class="primary_btn w-100 text-center text-decoration-none py-3 font-size-15" style="letter-spacing: 1.5px;">
+                        Proceed to Checkout <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+
+                    <!-- Security & Reassurance -->
+                    <div class="mt-4 pt-3 border-top text-center">
+                        <div class="d-flex justify-content-center gap-3 font-size-13 text-muted mb-2">
+                            <span><i class="fa-solid fa-lock mr-1" style="color: #263D32;"></i> 256-Bit SSL Encryption</span>
+                        </div>
+                        <div class="d-flex justify-content-center gap-2 font-size-18 text-muted">
+                            <i class="fa-brands fa-cc-visa"></i>
+                            <i class="fa-brands fa-cc-mastercard"></i>
+                            <i class="fa-brands fa-cc-amex"></i>
+                            <i class="fa-brands fa-cc-apple-pay"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer-con position-relative">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-4 col-lg-4 col-md-12 col-12 mb-4 mb-lg-0">
+                <div class="footer-logo mb-3">
+                    <a href="index.html">
+                        <img src="assets/images/footer-logo.svg" alt="WOODORA" onerror="this.onerror=null; this.src='assets/images/footer-logo.png'">
+                    </a>
+                </div>
+                <p>WOODORA crafts sustainable solid hardwood furniture and soulful interiors designed to endure for generations. Crafted for comfort. Designed for life.</p>
+            </div>
+            <div class="col-xl-2 col-lg-2 col-md-4 col-6">
+                <h4>Collections</h4>
+                <ul class="list-unstyled mb-0">
+                    <li><a href="shop.html">Living Room</a></li>
+                    <li><a href="shop.html">Dining Tables</a></li>
+                    <li><a href="shop.html">Lounge Chairs</a></li>
+                </ul>
+            </div>
+            <div class="col-xl-2 col-lg-2 col-md-4 col-6">
+                <h4>Support</h4>
+                <ul class="list-unstyled mb-0">
+                    <li><a href="services.html">White Glove Delivery</a></li>
+                    <li><a href="faq.html">Warranty & Care</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-12">
+                <h4>Flagship Showrooms</h4>
+                <p class="mb-1"><i class="fa-solid fa-location-dot mr-2" style="color: #C8A882;"></i> 420 Madison Avenue, New York, NY</p>
+                <p class="mb-0"><i class="fa-solid fa-phone mr-2" style="color: #C8A882;"></i> +1 (800) 966-3672</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 WOODORA Inc. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="assets/js/jquery-3.7.1.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/aos.js"></script>
+<script src="assets/js/back-to-top-button.js"></script>
+<script src="assets/js/woodora.js"></script>
+
+<script>
+    AOS.init({ duration: 800, once: true });
+</script>
+</body>
+</html>
