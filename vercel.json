@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/contact-form.php", "destination": "/api/contact-form" },
+    { "source": "/api/contact-form", "destination": "/api/contact-form" },
+    { "source": "/", "destination": "/contrive/index.html" },
+    { "source": "/((?!api/).*)", "destination": "/contrive/$1" }
+  ]
+}
