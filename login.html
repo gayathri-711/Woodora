@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Client Sign In | WOODORA</title>
+    <!-- SEO & Metadata -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta charset="utf-8">
+    <meta name="description" content="Sign in to your WOODORA client account to view orders, manage delivery appointments, and access your curated wishlist.">
+    
+    <!-- Favicon Icons -->
+    <link rel="icon" type="image/svg+xml" href="./assets/images/favicon/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon/apple-icon-180x180.png">
+    <link rel="manifest" href="./assets/images/favicon/manifest.json">
+    <meta name="theme-color" content="#263D32">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Jost:ital,wght@0,300..800&display=swap" rel="stylesheet">
+
+    <!-- CSS Dependencies -->
+    <link href="assets/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/responsive.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/woodora.css" rel="stylesheet" type="text/css">
+
+    <style>
+        body {
+            background-color: #F7F4EE;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #252525;
+            min-height: 100vh;
+        }
+        .auth-split-wrapper {
+            min-height: 100vh;
+        }
+        .auth-image-col {
+            background: linear-gradient(180deg, rgba(38, 61, 50, 0.45) 0%, rgba(26, 44, 35, 0.88) 100%),
+                        url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=85') center/cover no-repeat;
+            position: relative;
+            color: #F7F4EE;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 60px 50px;
+        }
+        .auth-form-col {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 30px;
+            background: #FFFFFF;
+        }
+        .auth-form-inner {
+            max-width: 440px;
+            width: 100%;
+        }
+        .auth-feature-pill {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 14px;
+            color: rgba(247, 244, 238, 0.9);
+        }
+        .auth-feature-pill i {
+            color: #C8A882;
+            font-size: 18px;
+        }
+        @media (max-width: 991.98px) {
+            .auth-image-col {
+                min-height: 280px;
+                padding: 40px 24px;
+            }
+            .auth-form-col {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container-fluid p-0">
+    <div class="row no-gutters auth-split-wrapper">
+        <!-- Left Column: Luxury Brand Atmosphere -->
+        <div class="col-lg-6 col-12 auth-image-col">
+            <div>
+                <a href="index.html" class="d-inline-flex align-items-center text-decoration-none">
+                    <img src="./assets/images/logo-white.svg" alt="WOODORA" style="height: 46px;" onerror="this.onerror=null; this.src='assets/images/logo.png'">
+                </a>
+            </div>
+
+            <div class="my-5 py-4">
+                <span class="badge px-3 py-1 mb-3 font-size-12" style="background: rgba(200, 168, 130, 0.2); color: #C8A882; border: 1px solid #C8A882; letter-spacing: 1.5px; text-transform: uppercase;">Private Client Portal</span>
+                <h1 style="font-family: 'Playfair Display', serif; font-size: 38px; line-height: 1.25; color: #F7F4EE; margin-bottom: 20px;">
+                    Crafted for Comfort.<br>Designed for Life.
+                </h1>
+                <p style="font-size: 16px; line-height: 1.7; color: rgba(247, 244, 238, 0.85); max-width: 480px;">
+                    Sign in to your private account to curate bespoke furniture, track white-glove shipments, and coordinate directly with our interior artisans.
+                </p>
+
+                <div class="mt-4 pt-2">
+                    <div class="auth-feature-pill">
+                        <i class="fa-solid fa-gem"></i>
+                        <span>Complimentary White Glove Placement & assembly on all orders over $500</span>
+                    </div>
+                    <div class="auth-feature-pill">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>10-Year Structural Frame & European joinery guarantee</span>
+                    </div>
+                    <div class="auth-feature-pill">
+                        <i class="fa-solid fa-compass-drafting"></i>
+                        <span>Dedicated interior stylist consultation and bespoke dimensioning</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="font-size-13" style="color: rgba(247, 244, 238, 0.65);">
+                &copy; <script>document.write(new Date().getFullYear())</script> WOODORA Atelier. All rights reserved.
+            </div>
+        </div>
+
+        <!-- Right Column: Interactive Login Form -->
+        <div class="col-lg-6 col-12 auth-form-col">
+            <div class="auth-form-inner">
+                <div class="mb-4">
+                    <a href="index.html" class="text-muted font-size-13 text-decoration-none d-inline-block mb-3">
+                        <i class="fa-solid fa-arrow-left mr-1"></i> Return to Storefront
+                    </a>
+                    <h2 style="font-family: 'Playfair Display', serif; font-size: 30px; color: #263D32; margin-bottom: 8px;">Welcome Back</h2>
+                    <p class="text-muted font-size-14 mb-0">Enter your credentials to access your WOODORA shopping session.</p>
+                </div>
+
+                <!-- 1-Click Demo Testing Card -->
+                <div class="p-3 mb-4 rounded" style="background: #F7F4EE; border: 1px dashed #805B42;">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="font-size-12 font-weight-bold" style="color: #805B42; text-transform: uppercase; letter-spacing: 0.5px;">
+                            <i class="fa-solid fa-bolt mr-1"></i> Instant Demo Testing
+                        </span>
+                        <span class="badge badge-light font-size-11" style="background: #E8DED0; color: #263D32;">Pre-Configured</span>
+                    </div>
+                    <p class="font-size-12 text-muted mb-2">
+                        Test the shopping & checkout flow immediately without typing credentials:
+                    </p>
+                    <div class="d-flex gap-2">
+                        <button type="button" id="btn-quick-julian" class="btn btn-sm flex-grow-1 mr-2 font-weight-bold" style="background: #263D32; color: #F7F4EE; font-size: 12px; padding: 7px 10px;">
+                            <i class="fa-solid fa-user-check mr-1"></i> Sign In as Julian
+                        </button>
+                        <button type="button" id="btn-quick-eleanor" class="btn btn-sm flex-grow-1 font-weight-bold" style="background: #805B42; color: #FFFFFF; font-size: 12px; padding: 7px 10px;">
+                            <i class="fa-solid fa-user-tie mr-1"></i> Eleanor (Trade)
+                        </button>
+                    </div>
+                </div>
+
+                <div id="login-error-alert" class="alert alert-danger font-size-13 py-2 px-3 mb-3" style="display: none;"></div>
+
+                <form id="woodora-page-login-form">
+                    <div class="form-group mb-3">
+                        <label for="pageLoginEmail" class="font-size-13 font-weight-600 text-dark mb-1">Email Address</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white" style="border-color: #E8DED0; color: #805B42;"><i class="fa-regular fa-envelope"></i></span>
+                            </div>
+                            <input class="form-control" type="email" id="pageLoginEmail" required placeholder="julian@woodora.com" value="julian@woodora.com" style="border-color: #E8DED0;">
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                            <label for="pageLoginPass" class="font-size-13 font-weight-600 text-dark mb-0">Password</label>
+                            <a href="#" class="font-size-12 font-weight-bold" style="color: #805B42;">Forgot password?</a>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white" style="border-color: #E8DED0; color: #805B42;"><i class="fa-solid fa-lock"></i></span>
+                            </div>
+                            <input class="form-control" type="password" id="pageLoginPass" required placeholder="••••••••" value="password123" style="border-color: #E8DED0;">
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="rememberMe" checked>
+                            <label class="custom-control-label font-size-13 text-muted" for="rememberMe" style="cursor: pointer;">
+                                Keep me signed in on this device
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="primary_btn w-100 text-center py-3 font-size-14 font-weight-600 mb-3" style="letter-spacing: 1px;">
+                        Sign In to WOODORA <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </button>
+                </form>
+
+                <div class="text-center pt-3 border-top font-size-14 text-muted">
+                    New to WOODORA? <a href="join-now.html" class="font-weight-bold" style="color: #805B42;">Create your client account</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery-3.7.1.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/woodora.js"></script>
+
+<script>
+    $(document).ready(function() {
+        // Handle redirect destination if passed
+        const urlParams = new URLSearchParams(window.location.search);
+        const redirectUrl = urlParams.get('redirect') || (document.referrer.indexOf(window.location.host) !== -1 ? document.referrer : 'shop.html');
+
+        function completeLogin(email, pass) {
+            const res = window.Woodora.auth.login(email, pass);
+            if (res.success) {
+                $('#login-error-alert').hide();
+                window.location.href = redirectUrl.indexOf('login.html') !== -1 ? 'shop.html' : redirectUrl;
+            } else {
+                $('#login-error-alert').text(res.message).fadeIn();
+            }
+        }
+
+        // Form Submit
+        $('#woodora-page-login-form').on('submit', function(e) {
+            e.preventDefault();
+            const email = $('#pageLoginEmail').val();
+            const pass = $('#pageLoginPass').val();
+            completeLogin(email, pass);
+        });
+
+        // Quick Julian
+        $('#btn-quick-julian').on('click', function(e) {
+            e.preventDefault();
+            $('#pageLoginEmail').val('julian@woodora.com');
+            $('#pageLoginPass').val('password123');
+            completeLogin('julian@woodora.com', 'password123');
+        });
+
+        // Quick Eleanor
+        $('#btn-quick-eleanor').on('click', function(e) {
+            e.preventDefault();
+            $('#pageLoginEmail').val('eleanor@woodora.com');
+            $('#pageLoginPass').val('password123');
+            completeLogin('eleanor@woodora.com', 'password123');
+        });
+    });
+</script>
+</body>
+</html>

@@ -4,7 +4,8 @@ const path = require('path');
 const querystring = require('querystring');
 
 const PORT = process.env.PORT || 8000;
-const PUBLIC_DIR = path.join(__dirname, 'contrive');
+const ROOT_DIR = __dirname;
+const CONTRIVE_DIR = path.join(__dirname, 'contrive');
 
 const MIME_TYPES = {
     '.html': 'text/html; charset=utf-8',
@@ -26,6 +27,41 @@ const MIME_TYPES = {
     '.mp3': 'audio/mpeg',
     '.ogg': 'audio/ogg'
 };
+
+function resolveFilePath(pathname) {
+    if (pathname === '/' || pathname === '') {
+        pathname = '/index.html';
+    }
+
+    // Try relative to ROOT_DIR first
+    let candidate = path.join(ROOT_DIR, pathname);
+    if (fs.existsSync(candidate) && fs.statSync(candidate).isFile()) {
+        return candidate;
+    }
+
+    // Try with .html extension (Clean URLs support)
+    if (!path.extname(pathname)) {
+        let htmlCandidate = path.join(ROOT_DIR, pathname + '.html');
+        if (fs.existsSync(htmlCandidate) && fs.statSync(htmlCandidate).isFile()) {
+            return htmlCandidate;
+        }
+    }
+
+    // Try inside CONTRIVE_DIR
+    let contriveCandidate = path.join(CONTRIVE_DIR, pathname);
+    if (fs.existsSync(contriveCandidate) && fs.statSync(contriveCandidate).isFile()) {
+        return contriveCandidate;
+    }
+
+    if (!path.extname(pathname)) {
+        let contriveHtmlCandidate = path.join(CONTRIVE_DIR, pathname + '.html');
+        if (fs.existsSync(contriveHtmlCandidate) && fs.statSync(contriveHtmlCandidate).isFile()) {
+            return contriveHtmlCandidate;
+        }
+    }
+
+    return null;
+}
 
 const server = http.createServer((req, res) => {
     // Enable CORS
@@ -58,45 +94,33 @@ const server = http.createServer((req, res) => {
         return;
     }
 
-    if (pathname === '/' || pathname === '') {
-        pathname = '/index.html';
+    // Strip legacy /contrive/ prefix if present
+    if (pathname.startsWith('/contrive/')) {
+        pathname = pathname.replace(/^\/contrive/, '');
     }
 
-    let filePath = path.join(PUBLIC_DIR, pathname);
+    const resolvedFile = resolveFilePath(pathname);
 
-    // Prevent directory traversal
-    if (!filePath.startsWith(PUBLIC_DIR)) {
-        res.writeHead(403, { 'Content-Type': 'text/plain' });
-        res.end('403 Forbidden');
+    if (!resolvedFile) {
+        res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
+        res.end(`<!DOCTYPE html>
+<html>
+<head><title>404 Not Found - WOODORA</title></head>
+<body style="font-family: sans-serif; text-align: center; padding: 50px;">
+    <h2>404 - Page Not Found</h2>
+    <p>Requested: ${pathname}</p>
+    <a href="/">Return to WOODORA Homepage</a>
+</body>
+</html>`);
         return;
     }
 
-    fs.stat(filePath, (err, stats) => {
-        if (err || !stats.isFile()) {
-            // Check if it's a directory and has index.html
-            if (stats && stats.isDirectory()) {
-                const dirIndex = path.join(filePath, 'index.html');
-                if (fs.existsSync(dirIndex)) {
-                    filePath = dirIndex;
-                } else {
-                    res.writeHead(404, { 'Content-Type': 'text/html' });
-                    res.end('<h1>404 Not Found</h1>');
-                    return;
-                }
-            } else {
-                res.writeHead(404, { 'Content-Type': 'text/html' });
-                res.end('<h1>404 Not Found</h1>');
-                return;
-            }
-        }
+    const ext = path.extname(resolvedFile).toLowerCase();
+    const contentType = MIME_TYPES[ext] || 'application/octet-stream';
 
-        const ext = path.extname(filePath).toLowerCase();
-        const contentType = MIME_TYPES[ext] || 'application/octet-stream';
-
-        res.writeHead(200, { 'Content-Type': contentType });
-        const stream = fs.createReadStream(filePath);
-        stream.pipe(res);
-    });
+    res.writeHead(200, { 'Content-Type': contentType });
+    const stream = fs.createReadStream(resolvedFile);
+    stream.pipe(res);
 });
 
 server.listen(PORT, () => {
@@ -108,4 +132,3 @@ server.listen(PORT, () => {
     console.log(`  Press Ctrl+C to terminate.                           `);
     console.log(`=======================================================`);
 });
-

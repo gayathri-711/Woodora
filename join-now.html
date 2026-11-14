@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Create Your Account | WOODORA</title>
+    <!-- SEO & Metadata -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta charset="utf-8">
+    <meta name="description" content="Create a WOODORA client account to enjoy exclusive lookbook previews, tailored trade privileges, and track white-glove orders.">
+    
+    <!-- Favicon Icons -->
+    <link rel="icon" type="image/svg+xml" href="./assets/images/favicon/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon/apple-icon-180x180.png">
+    <link rel="manifest" href="./assets/images/favicon/manifest.json">
+    <meta name="theme-color" content="#263D32">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Jost:ital,wght@0,300..800&display=swap" rel="stylesheet">
+
+    <!-- CSS Dependencies -->
+    <link href="assets/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/responsive.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/woodora.css" rel="stylesheet" type="text/css">
+
+    <style>
+        body {
+            background-color: #F7F4EE;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #252525;
+            min-height: 100vh;
+        }
+        .auth-split-wrapper {
+            min-height: 100vh;
+        }
+        .auth-image-col {
+            background: linear-gradient(180deg, rgba(38, 61, 50, 0.45) 0%, rgba(26, 44, 35, 0.90) 100%),
+                        url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=85') center/cover no-repeat;
+            position: relative;
+            color: #F7F4EE;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 60px 50px;
+        }
+        .auth-form-col {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 30px;
+            background: #FFFFFF;
+        }
+        .auth-form-inner {
+            max-width: 460px;
+            width: 100%;
+        }
+        .auth-feature-pill {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 14px;
+            color: rgba(247, 244, 238, 0.9);
+        }
+        .auth-feature-pill i {
+            color: #C8A882;
+            font-size: 18px;
+        }
+        @media (max-width: 991.98px) {
+            .auth-image-col {
+                min-height: 280px;
+                padding: 40px 24px;
+            }
+            .auth-form-col {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container-fluid p-0">
+    <div class="row no-gutters auth-split-wrapper">
+        <!-- Left Column: Atmosphere -->
+        <div class="col-lg-6 col-12 auth-image-col">
+            <div>
+                <a href="index.html" class="d-inline-flex align-items-center text-decoration-none">
+                    <img src="./assets/images/logo-white.svg" alt="WOODORA" style="height: 46px;" onerror="this.onerror=null; this.src='assets/images/logo.png'">
+                </a>
+            </div>
+
+            <div class="my-5 py-4">
+                <span class="badge px-3 py-1 mb-3 font-size-12" style="background: rgba(200, 168, 130, 0.2); color: #C8A882; border: 1px solid #C8A882; letter-spacing: 1.5px; text-transform: uppercase;">WOODORA Society</span>
+                <h1 style="font-family: 'Playfair Display', serif; font-size: 38px; line-height: 1.25; color: #F7F4EE; margin-bottom: 20px;">
+                    Begin Your Journey in Handcrafted Living.
+                </h1>
+                <p style="font-size: 16px; line-height: 1.7; color: rgba(247, 244, 238, 0.85); max-width: 480px;">
+                    Join over 4,200 homeowners and architects worldwide. Gain privileged access to limited seasonal runs, wood finish swatches, and trade discounts.
+                </p>
+
+                <div class="mt-4 pt-2">
+                    <div class="auth-feature-pill">
+                        <i class="fa-solid fa-gift"></i>
+                        <span>Welcome privilege: 10% OFF your maiden order with code <strong>WOODORA10</strong></span>
+                    </div>
+                    <div class="auth-feature-pill">
+                        <i class="fa-solid fa-tree"></i>
+                        <span>FSC-Certified French White Oak and American Black Walnut</span>
+                    </div>
+                    <div class="auth-feature-pill">
+                        <i class="fa-solid fa-swatchbook"></i>
+                        <span>Complimentary physical timber and upholstery swatch kit on demand</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="font-size-13" style="color: rgba(247, 244, 238, 0.65);">
+                &copy; <script>document.write(new Date().getFullYear())</script> WOODORA Atelier. All rights reserved.
+            </div>
+        </div>
+
+        <!-- Right Column: Interactive Registration Form -->
+        <div class="col-lg-6 col-12 auth-form-col">
+            <div class="auth-form-inner">
+                <div class="mb-4">
+                    <a href="index.html" class="text-muted font-size-13 text-decoration-none d-inline-block mb-3">
+                        <i class="fa-solid fa-arrow-left mr-1"></i> Return to Storefront
+                    </a>
+                    <h2 style="font-family: 'Playfair Display', serif; font-size: 30px; color: #263D32; margin-bottom: 8px;">Create Client Account</h2>
+                    <p class="text-muted font-size-14 mb-0">Join to purchase, save favorites, and receive white-glove support.</p>
+                </div>
+
+                <div id="register-error-alert" class="alert alert-danger font-size-13 py-2 px-3 mb-3" style="display: none;"></div>
+
+                <form id="woodora-page-register-form">
+                    <div class="form-group mb-3">
+                        <label for="pageRegName" class="font-size-13 font-weight-600 text-dark mb-1">Full Legal Name <span class="text-danger">*</span></label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white" style="border-color: #E8DED0; color: #805B42;"><i class="fa-regular fa-user"></i></span>
+                            </div>
+                            <input class="form-control" type="text" id="pageRegName" required placeholder="Eleanor Vance" style="border-color: #E8DED0;">
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="pageRegEmail" class="font-size-13 font-weight-600 text-dark mb-1">Email Address <span class="text-danger">*</span></label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white" style="border-color: #E8DED0; color: #805B42;"><i class="fa-regular fa-envelope"></i></span>
+                            </div>
+                            <input class="form-control" type="email" id="pageRegEmail" required placeholder="eleanor@example.com" style="border-color: #E8DED0;">
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="pageRegPass" class="font-size-13 font-weight-600 text-dark mb-1">Password (Min. 6 characters) <span class="text-danger">*</span></label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white" style="border-color: #E8DED0; color: #805B42;"><i class="fa-solid fa-lock"></i></span>
+                            </div>
+                            <input class="form-control" type="password" id="pageRegPass" minlength="6" required placeholder="••••••••" style="border-color: #E8DED0;">
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="pageRegRole" class="font-size-13 font-weight-600 text-dark mb-1">Client Category</label>
+                        <select class="form-control" id="pageRegRole" style="border-color: #E8DED0;">
+                            <option>Private Homeowner / Collector</option>
+                            <option>Interior Designer (Trade Member)</option>
+                            <option>Architect / Commercial Hospitality</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="regTerms" checked required>
+                            <label class="custom-control-label font-size-13 text-muted" for="regTerms" style="cursor: pointer;">
+                                I agree to the <a href="term-of-use.html" class="text-dark font-weight-bold">Terms of Service</a> & <a href="privacy-policy.html" class="text-dark font-weight-bold">Privacy Policy</a>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="primary_btn w-100 text-center py-3 font-size-14 font-weight-600 mb-3" style="letter-spacing: 1px;">
+                        Create Account & Start Shopping <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </button>
+                </form>
+
+                <div class="text-center pt-3 border-top font-size-14 text-muted">
+                    Already a WOODORA member? <a href="login.html" class="font-weight-bold" style="color: #805B42;">Sign in</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery-3.7.1.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/woodora.js"></script>
+
+<script>
+    $(document).ready(function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const redirectUrl = urlParams.get('redirect') || 'shop.html';
+
+        $('#woodora-page-register-form').on('submit', function(e) {
+            e.preventDefault();
+            const name = $('#pageRegName').val();
+            const email = $('#pageRegEmail').val();
+            const pass = $('#pageRegPass').val();
+            const role = $('#pageRegRole').val();
+
+            const res = window.Woodora.auth.register(name, email, pass, role);
+            if (res.success) {
+                $('#register-error-alert').hide();
+                setTimeout(function() {
+                    window.location.href = redirectUrl.indexOf('join-now.html') !== -1 ? 'shop.html' : redirectUrl;
+                }, 400);
+            } else {
+                $('#register-error-alert').text(res.message).fadeIn();
+            }
+        });
+    });
+</script>
+</body>
+</html>
