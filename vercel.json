@@ -1,9 +1,8 @@
 {
-  "version": 2,
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
     { "source": "/contact-form.php", "destination": "/api/contact-form" },
-    { "source": "/contrive/:match*", "destination": "/:match*" }
+    { "source": "/contrive/(.*)", "destination": "/$1" }
   ]
 }
