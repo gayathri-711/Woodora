@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>Client Reviews & Testimonials | WOODORA</title>
+    <title>Client Reviews & Endorsements | WOODORA</title>
     <!-- SEO & Metadata -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <meta charset="utf-8">
-    <meta name="description" content="Read verified client reviews and architectural testimonials for WOODORA solid hardwood furniture and White Glove delivery.">
+    <meta name="description" content="Verified client reviews and architectural testimonials for WOODORA solid hardwood furniture, bespoke joinery, and White Glove delivery.">
     
     <!-- Favicon Icons -->
     <link rel="icon" type="image/svg+xml" href="./assets/images/favicon/favicon.svg">
@@ -15,6 +14,7 @@
     <link rel="manifest" href="./assets/images/favicon/manifest.json">
     <meta name="theme-color" content="#263D32">
 
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,26 +23,57 @@
     <!-- CSS Dependencies -->
     <link href="assets/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="assets/css/owl.carousel.min.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/owl.theme.default.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/aos.css" rel="stylesheet">
-    <!-- Main StyleSheets -->
+    <link href="assets/css/owl.carousel.min.css" rel="stylesheet">
+    <link href="assets/css/owl.theme.default.min.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet" type="text/css">
     <link href="assets/css/responsive.css" rel="stylesheet" type="text/css">
     <link href="assets/css/woodora.css" rel="stylesheet" type="text/css">
+
 </head>
 
 <body>
 <a id="button"><i class="fa-solid fa-angle-up"></i></a>
 
 <div class="sub_banner position-relative">
-    <!-- Header Navigation -->
+    
+    <!-- Top Announcement Bar -->
+    <div class="top-bar-con">
+        <div class="container">
+            <div class="top-bar-box">
+                <div class="top-bar-info">
+                    <p class="text mb-0">
+                        <i class="fa-solid fa-truck-fast mr-2"></i> Complimentary White Glove In-Home Delivery on orders over <span>$500</span> | Discover the <strong>Autumn 2025 Collection</strong>
+                    </p>
+                </div>
+                <div class="top-bar-social d-none d-md-block">
+                    <div class="other_list">
+                        <div class="country-selector lang-dropdown">
+                            <div class="caption text-white"><img src="./assets/images/header-flag2.png" alt="USA"> USD ($) <img src="assets/images/header-dropdown.png" alt="arrow"></div>
+                            <div class="list" id="lang-dropdown">
+                                <div class="item">
+                                    <img src="./assets/images/header-flag2.png" alt="USA">
+                                    <a class="text-decoration-none" href="./index.html">USD ($)</a>
+                                </div>
+                                <div class="item">
+                                    <img src="./assets/images/header-flag1.png" alt="UK">
+                                    <a class="text-decoration-none" href="./index.html">GBP (&pound;)</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Premium Navigation Bar -->
     <header class="header sticky-top">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light p-0">
                 <a class="navbar-brand" href="index.html">
                     <figure class="logo mb-0">
-                        <img src="assets/images/logo.svg" alt="WOODORA" class="img-fluid" onerror="this.onerror=null; this.src='assets/images/logo.png'">
+                        <img src="assets/images/logo.svg" alt="WOODORA – Crafted for Comfort" class="img-fluid" onerror="this.onerror=null; this.src='assets/images/logo.png'">
                     </figure>
                 </a>
                 <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -53,31 +84,103 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
-                        <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                        <li class="nav-item active"><a class="nav-link" href="review.html">Reviews</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item ${activePage === 'home' ? 'active' : ''}">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown ${activePage === 'shop' ? 'active' : ''}">
+                            <a class="nav-link dropdown-toggle" href="shop.html" id="shopDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Shop <i class="fa-solid fa-angle-down ml-1 font-size-12"></i>
+                            </a>
+                            <div class="dropdown-menu drop-down-content" aria-labelledby="shopDropdown">
+                                <ul class="list-unstyled drop-down-pages">
+                                    <li><a class="dropdown-item nav-link" href="shop.html">All Furniture</a></li>
+                                    <li><a class="dropdown-item nav-link" href="shop.html">Sofas & Sectionals</a></li>
+                                    <li><a class="dropdown-item nav-link" href="shop.html">Dining Tables</a></li>
+                                    <li><a class="dropdown-item nav-link" href="shop.html">Lounge Chairs</a></li>
+                                    <li><a class="dropdown-item nav-link" href="shop.html">Beds & Bedroom</a></li>
+                                    <li><a class="dropdown-item nav-link" href="shop.html">Coffee Tables</a></li>
+                                    <li><a class="dropdown-item nav-link" href="shop.html">Home Decor</a></li>
+                                    <li><a class="dropdown-item nav-link font-weight-bold" href="product-detail.html">Featured Product Detail</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item ${activePage === 'portfolio' ? 'active' : ''}">
+                            <a class="nav-link" href="portfolio.html">Portfolio</a>
+                        </li>
+                        <li class="nav-item ${activePage === 'services' ? 'active' : ''}">
+                            <a class="nav-link" href="services.html">Services</a>
+                        </li>
+                        <li class="nav-item ${activePage === 'about' ? 'active' : ''}">
+                            <a class="nav-link" href="about.html">About Us</a>
+                        </li>
+                        <li class="nav-item dropdown ${activePage === 'pages' ? 'active' : ''}">
+                            <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Pages <i class="fa-solid fa-angle-down ml-1 font-size-12"></i>
+                            </a>
+                            <div class="dropdown-menu drop-down-content" aria-labelledby="pagesDropdown">
+                                <ul class="list-unstyled drop-down-pages">
+                                    <li><a class="dropdown-item nav-link" href="cart.html">Shopping Cart</a></li>
+                                    <li><a class="dropdown-item nav-link" href="checkout.html">Checkout</a></li>
+                                    <li><a class="dropdown-item nav-link" href="faq.html">FAQ & Care</a></li>
+                                    <li><a class="dropdown-item nav-link" href="team.html">Our Artisans</a></li>
+                                    <li><a class="dropdown-item nav-link" href="review.html">Client Reviews</a></li>
+                                    <li><a class="dropdown-item nav-link" href="login.html">Client Login</a></li>
+                                    <li><a class="dropdown-item nav-link" href="join-now.html">Create Account</a></li>
+                                    <li><a class="dropdown-item nav-link" href="privacy-policy.html">Privacy Policy</a></li>
+                                    <li><a class="dropdown-item nav-link" href="term-of-use.html">Terms of Service</a></li>
+                                    <li><a class="dropdown-item nav-link" href="cookie-policy.html">Cookie Policy</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown ${activePage === 'journal' ? 'active' : ''}">
+                            <a class="nav-link dropdown-toggle" href="blog.html" id="blogDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Journal <i class="fa-solid fa-angle-down ml-1 font-size-12"></i>
+                            </a>
+                            <div class="dropdown-menu drop-down-content" aria-labelledby="blogDropdown">
+                                <ul class="list-unstyled drop-down-pages">
+                                    <li><a class="dropdown-item nav-link" href="blog.html">Journal Grid</a></li>
+                                    <li><a class="dropdown-item nav-link" href="single-blog.html">Featured Essay</a></li>
+                                    <li><a class="dropdown-item nav-link" href="three-colum-sidbar.html">Journal with Sidebar</a></li>
+                                    <li><a class="dropdown-item nav-link" href="four-column.html">Four Column Gallery</a></li>
+                                    <li><a class="dropdown-item nav-link" href="six-colum-full-wide.html">Full-Width Showcase</a></li>
+                                    <li><a class="dropdown-item nav-link" href="load-more.html">Load More Feed</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item ${activePage === 'contact' ? 'active' : ''}">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="last_list ml-lg-4">
+                    <a class="search" href="#search" title="Search catalog"><i class="fa-solid fa-magnifying-glass"></i></a>
                     <a class="cart" href="./cart.html" title="Shopping Cart"><i class="fa-solid fa-bag-shopping"></i><span>3</span></a>
+                    <a class="admin" href="./login.html" title="Client Account"><i class="fa-regular fa-user"></i></a>
                 </div>
             </nav>
         </div>
     </header>
 
+    <!-- Search Overlay -->
+    <div id="search"> 
+        <span class="close"><i class="fa-solid fa-xmark"></i></span>
+        <form role="search" id="searchform" action="shop.html" method="get">
+            <input value="" name="q" type="search" placeholder="Search by furniture name, material, or room...">
+        </form>
+    </div>
+    
+
     <!-- Sub-banner -->
     <section class="sub_banner_con position-relative py-5">
         <div class="container text-center">
             <div class="sub_banner_content" data-aos="fade-up">
-                <h6>Client Experiences</h6>
+                <h6>Verified Client Experiences</h6>
                 <h1>Client Reviews & Endorsements</h1>
-                <p class="text-size-18">Verified feedback from homeowners, collectors, and renowned interior designers worldwide.</p>
+                <p class="text-size-18">Real testimonials from homeowners, private collectors, and interior architects worldwide.</p>
                 <div class="box mt-3">
                     <a href="index.html" class="text-decoration-none"><span>Home</span></a>
+                    <span class="slash">/</span>
+                    <a href="shop.html" class="text-decoration-none"><span>Pages</span></a>
                     <span class="slash">/</span>
                     <span class="box_span">Reviews</span>
                 </div>
@@ -87,66 +190,189 @@
 </div>
 
 <!-- Reviews Section -->
-<section class="testimonial-con position-relative py-5" style="background-color: #FFFFFF;">
+<section class="py-5" style="background-color: #FFFFFF;">
     <div class="container py-4">
         <!-- Rating Overview Banner -->
-        <div class="row mb-5 text-center" data-aos="fade-up">
-            <div class="col-lg-8 mx-auto p-4 rounded" style="background: #F7F4EE; border: 1px solid #E8DED0;">
-                <div class="display-4 font-weight-bold" style="font-family: 'Playfair Display', serif; color: #263D32;">4.95 / 5.0</div>
-                <div class="my-2" style="color: #C8A882; font-size: 20px;">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        <div class="row mb-5" data-aos="fade-up">
+            <div class="col-lg-10 mx-auto p-4 p-md-5 rounded shadow-sm d-flex flex-column flex-md-row align-items-center justify-content-between" style="background: #F7F4EE; border: 1px solid #E8DED0;">
+                <div class="text-center text-md-left mb-4 mb-md-0">
+                    <div class="d-flex align-items-baseline justify-content-center justify-content-md-start">
+                        <span class="display-4 font-weight-bold mr-3" style="font-family: 'Playfair Display', serif; color: #263D32;">4.95</span>
+                        <span class="font-size-20 text-muted">/ 5.0</span>
+                    </div>
+                    <div class="my-2" style="color: #C8A882; font-size: 20px;">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text font-size-14 mb-0 text-muted">Based on 1,480+ verified residential & architectural commissions across 32 countries.</p>
                 </div>
-                <p class="text font-size-15 mb-0">Based on 1,480+ verified residential & architectural installations across 32 countries.</p>
+                <div class="text-center">
+                    <button class="primary_btn px-4 py-3" data-toggle="modal" data-target="#reviewModal">
+                        <i class="fa-solid fa-pen-to-square mr-2"></i> Submit Your Review
+                    </button>
+                </div>
             </div>
         </div>
 
-        <div class="row" data-aos="fade-up">
+        <!-- Filter Tabs -->
+        <div class="row mb-4" data-aos="fade-up">
+            <div class="col-12 text-center">
+                <div class="btn-group flex-wrap gap-2 review-filter-btns" role="group">
+                    <button type="button" class="btn btn-outline-dark active px-3 py-2 mr-2 mb-2 font-size-13" data-filter="all" style="border-color: #E8DED0;">All Reviews (1,480+)</button>
+                    <button type="button" class="btn btn-outline-dark px-3 py-2 mr-2 mb-2 font-size-13" data-filter="living" style="border-color: #E8DED0;">Sofas & Living</button>
+                    <button type="button" class="btn btn-outline-dark px-3 py-2 mr-2 mb-2 font-size-13" data-filter="dining" style="border-color: #E8DED0;">Dining Tables</button>
+                    <button type="button" class="btn btn-outline-dark px-3 py-2 mr-2 mb-2 font-size-13" data-filter="bedroom" style="border-color: #E8DED0;">Platform Beds</button>
+                    <button type="button" class="btn btn-outline-dark px-3 py-2 mb-2 font-size-13" data-filter="trade" style="border-color: #E8DED0;">Architects & Trade</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reviews Grid -->
+        <div class="row" id="reviews-container" data-aos="fade-up">
             <!-- Review 1 -->
-            <div class="col-lg-4 col-md-6 col-12 mb-4">
-                <div class="testimonial-card-luxury">
-                    <div class="stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <div class="col-lg-4 col-md-6 col-12 mb-4 review-card-item" data-category="dining trade">
+                <div class="testimonial-card-luxury h-100 p-4 rounded d-flex flex-column justify-content-between" style="background: #FAF8F5; border: 1px solid #E8DED0;">
+                    <div>
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <div class="stars" style="color: #C8A882;">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="badge badge-light font-size-11" style="border: 1px solid #D2C4B5; color: #263D32;">Verified Trade Client</span>
+                        </div>
+                        <h5 style="font-family: 'Playfair Display', serif; font-size: 18px; color: #263D32; margin-bottom: 8px;">Solid Walnut Dining Table</h5>
+                        <p class="quote font-size-14 text-muted mb-4" style="line-height: 1.7;">
+                            "The 8-seater dining table has become the architectural focal point of our client's penthouse. The continuous grain match across the slab is sublime, and the natural organic oil finish feels velvet-soft."
+                        </p>
                     </div>
-                    <p class="quote">"The Solid Walnut Dining Table has completely redefined our gatherings. The grain is breathtaking, and the smooth satin oil finish feels warm and organic to the touch."</p>
-                    <div class="author-info">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Eleanor Vance">
+                    <div class="author-info d-flex align-items-center pt-3 border-top" style="border-color: #E8DED0 !important;">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Eleanor Vance" class="rounded-circle mr-3" style="width: 50px; height: 50px; object-fit: cover; border: 2px solid #805B42;">
                         <div>
-                            <h5>Eleanor Vance</h5>
-                            <span>Architectural Interior Designer, NY</span>
+                            <h6 class="mb-0 font-weight-bold text-dark font-size-14">Eleanor Vance</h6>
+                            <small class="text-muted">Principal Architect, Manhattan Studio</small>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Review 2 -->
-            <div class="col-lg-4 col-md-6 col-12 mb-4">
-                <div class="testimonial-card-luxury">
-                    <div class="stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <div class="col-lg-4 col-md-6 col-12 mb-4 review-card-item" data-category="living">
+                <div class="testimonial-card-luxury h-100 p-4 rounded d-flex flex-column justify-content-between" style="background: #FAF8F5; border: 1px solid #E8DED0;">
+                    <div>
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <div class="stars" style="color: #C8A882;">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="badge badge-light font-size-11" style="border: 1px solid #D2C4B5; color: #263D32;">Verified Homeowner</span>
+                        </div>
+                        <h5 style="font-family: 'Playfair Display', serif; font-size: 18px; color: #263D32; margin-bottom: 8px;">Nordic Minimalist Oak Sofa</h5>
+                        <p class="quote font-size-14 text-muted mb-4" style="line-height: 1.7;">
+                            "White Glove delivery exceeded every expectation. The two specialists arrived precisely on schedule, placed the sofa in our living room, assembled the oak base, and left no packing behind. Incredible comfort."
+                        </p>
                     </div>
-                    <p class="quote">"WOODORA's White Glove delivery was truly first-class. The delivery specialists placed our sectional perfectly and took away every scrap of packaging. Superior craftsmanship."</p>
-                    <div class="author-info">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="Julian Sterling">
+                    <div class="author-info d-flex align-items-center pt-3 border-top" style="border-color: #E8DED0 !important;">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Julian Sterling" class="rounded-circle mr-3" style="width: 50px; height: 50px; object-fit: cover; border: 2px solid #805B42;">
                         <div>
-                            <h5>Julian Sterling</h5>
-                            <span>Verified Homeowner, London</span>
+                            <h6 class="mb-0 font-weight-bold text-dark font-size-14">Julian Sterling</h6>
+                            <small class="text-muted">Private Homeowner, London</small>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Review 3 -->
-            <div class="col-lg-4 col-md-6 col-12 mb-4">
-                <div class="testimonial-card-luxury">
-                    <div class="stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <div class="col-lg-4 col-md-6 col-12 mb-4 review-card-item" data-category="bedroom">
+                <div class="testimonial-card-luxury h-100 p-4 rounded d-flex flex-column justify-content-between" style="background: #FAF8F5; border: 1px solid #E8DED0;">
+                    <div>
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <div class="stars" style="color: #C8A882;">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="badge badge-light font-size-11" style="border: 1px solid #D2C4B5; color: #263D32;">Verified Homeowner</span>
+                        </div>
+                        <h5 style="font-family: 'Playfair Display', serif; font-size: 18px; color: #263D32; margin-bottom: 8px;">Japanese Low Platform Bed</h5>
+                        <p class="quote font-size-14 text-muted mb-4" style="line-height: 1.7;">
+                            "Finding solid oak constructed with traditional mortise-and-tenon joints without a single screw is nearly impossible today. WOODORA has revived honest heirloom craftsmanship. Truly serene to sleep on."
+                        </p>
                     </div>
-                    <p class="quote">"In an era of disposable mass-produced furniture, finding solid hardwood constructed with classic joinery is rare. WOODORA is an investment our family will cherish for decades."</p>
-                    <div class="author-info">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80" alt="Amara Chen">
+                    <div class="author-info d-flex align-items-center pt-3 border-top" style="border-color: #E8DED0 !important;">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80" alt="Amara Chen" class="rounded-circle mr-3" style="width: 50px; height: 50px; object-fit: cover; border: 2px solid #805B42;">
                         <div>
-                            <h5>Amara Chen</h5>
-                            <span>Creative Director, San Francisco</span>
+                            <h6 class="mb-0 font-weight-bold text-dark font-size-14">Amara Chen</h6>
+                            <small class="text-muted">Design Director, San Francisco</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 4 -->
+            <div class="col-lg-4 col-md-6 col-12 mb-4 review-card-item" data-category="living">
+                <div class="testimonial-card-luxury h-100 p-4 rounded d-flex flex-column justify-content-between" style="background: #FAF8F5; border: 1px solid #E8DED0;">
+                    <div>
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <div class="stars" style="color: #C8A882;">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="badge badge-light font-size-11" style="border: 1px solid #D2C4B5; color: #263D32;">Verified Client</span>
+                        </div>
+                        <h5 style="font-family: 'Playfair Display', serif; font-size: 18px; color: #263D32; margin-bottom: 8px;">Architectural Marble Coffee Table</h5>
+                        <p class="quote font-size-14 text-muted mb-4" style="line-height: 1.7;">
+                            "The solid travertine top has distinctive natural veining that makes it look like an art gallery sculpture. Substantial weight, flawless edge chamfering, and fast delivery."
+                        </p>
+                    </div>
+                    <div class="author-info d-flex align-items-center pt-3 border-top" style="border-color: #E8DED0 !important;">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" alt="Marcus Vance" class="rounded-circle mr-3" style="width: 50px; height: 50px; object-fit: cover; border: 2px solid #805B42;">
+                        <div>
+                            <h6 class="mb-0 font-weight-bold text-dark font-size-14">Marcus Vance</h6>
+                            <small class="text-muted">Private Collector, Chicago</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 5 -->
+            <div class="col-lg-4 col-md-6 col-12 mb-4 review-card-item" data-category="trade dining">
+                <div class="testimonial-card-luxury h-100 p-4 rounded d-flex flex-column justify-content-between" style="background: #FAF8F5; border: 1px solid #E8DED0;">
+                    <div>
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <div class="stars" style="color: #C8A882;">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="badge badge-light font-size-11" style="border: 1px solid #D2C4B5; color: #263D32;">Hospitality Partner</span>
+                        </div>
+                        <h5 style="font-family: 'Playfair Display', serif; font-size: 18px; color: #263D32; margin-bottom: 8px;">Bespoke Executive Boardroom Table</h5>
+                        <p class="quote font-size-14 text-muted mb-4" style="line-height: 1.7;">
+                            "We commissioned a custom 4-meter smoked oak table with concealed cable management for our private client salon. Henrik Lindqvist's atelier delivered perfection on schedule."
+                        </p>
+                    </div>
+                    <div class="author-info d-flex align-items-center pt-3 border-top" style="border-color: #E8DED0 !important;">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=150&q=80" alt="Sophia Laurent" class="rounded-circle mr-3" style="width: 50px; height: 50px; object-fit: cover; border: 2px solid #805B42;">
+                        <div>
+                            <h6 class="mb-0 font-weight-bold text-dark font-size-14">Sophia Laurent</h6>
+                            <small class="text-muted">Hospitality Director, Paris</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 6 -->
+            <div class="col-lg-4 col-md-6 col-12 mb-4 review-card-item" data-category="living">
+                <div class="testimonial-card-luxury h-100 p-4 rounded d-flex flex-column justify-content-between" style="background: #FAF8F5; border: 1px solid #E8DED0;">
+                    <div>
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <div class="stars" style="color: #C8A882;">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="badge badge-light font-size-11" style="border: 1px solid #D2C4B5; color: #263D32;">Verified Homeowner</span>
+                        </div>
+                        <h5 style="font-family: 'Playfair Display', serif; font-size: 18px; color: #263D32; margin-bottom: 8px;">Bouclé Curved Armchair</h5>
+                        <p class="quote font-size-14 text-muted mb-4" style="line-height: 1.7;">
+                            "The tactile bouclé fabric is durable yet cloud-like to sit in. Everyone who visits our apartment asks where we found it. Truly elevates our reading corner."
+                        </p>
+                    </div>
+                    <div class="author-info d-flex align-items-center pt-3 border-top" style="border-color: #E8DED0 !important;">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&q=80" alt="Liam Hemsworth" class="rounded-circle mr-3" style="width: 50px; height: 50px; object-fit: cover; border: 2px solid #805B42;">
+                        <div>
+                            <h6 class="mb-0 font-weight-bold text-dark font-size-14">David K. Miller</h6>
+                            <small class="text-muted">Homeowner, Seattle</small>
                         </div>
                     </div>
                 </div>
@@ -154,30 +380,243 @@
         </div>
 
         <div class="text-center mt-4">
-            <a href="shop.html" class="primary_btn text-decoration-none">Experience the Collection</a>
+            <a href="shop.html" class="primary_btn text-decoration-none px-4 py-3">Explore the Complete Collection &rarr;</a>
         </div>
     </div>
 </section>
 
-<!-- Footer -->
-<footer class="footer-con position-relative">
-    <div class="container text-center">
-        <div class="footer-logo mb-3">
-            <a href="index.html"><img src="assets/images/footer-logo.svg" alt="WOODORA" onerror="this.onerror=null; this.src='assets/images/footer-logo.png'"></a>
+<!-- Review Submission Modal -->
+<div class="modal fade" id="reviewModal" tabindex="-1" role="dialog" aria-hidden="true" style="z-index: 105000;">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 520px;">
+        <div class="modal-content rounded border-0 shadow-lg overflow-hidden">
+            <div class="modal-header py-3 px-4 border-0" style="background: #263D32; color: #F7F4EE;">
+                <div>
+                    <h5 class="modal-title font-weight-bold" style="font-family: 'Playfair Display', serif;">Submit Client Review</h5>
+                    <small style="color: #C8A882;">Share your experience with our handcrafted timber pieces</small>
+                </div>
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal-body p-4">
+                <form id="client-review-form">
+                    <div class="form-group mb-3">
+                        <label class="font-size-13 font-weight-600 text-dark">Your Rating</label>
+                        <div class="star-rating d-flex gap-2 font-size-22" style="color: #C8A882; cursor: pointer;">
+                            <i class="fa-solid fa-star star-opt" data-val="1"></i>
+                            <i class="fa-solid fa-star star-opt" data-val="2"></i>
+                            <i class="fa-solid fa-star star-opt" data-val="3"></i>
+                            <i class="fa-solid fa-star star-opt" data-val="4"></i>
+                            <i class="fa-solid fa-star star-opt" data-val="5"></i>
+                        </div>
+                        <input type="hidden" id="review-stars-val" value="5">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label class="font-size-13 font-weight-600 text-dark">Full Name</label>
+                        <input type="text" class="form-control" id="rev-name" required placeholder="Eleanor Vance" style="border-color: #E8DED0;">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label class="font-size-13 font-weight-600 text-dark">Role & City</label>
+                        <input type="text" class="form-control" id="rev-role" placeholder="Interior Designer, New York" style="border-color: #E8DED0;">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label class="font-size-13 font-weight-600 text-dark">Furniture Item Reviewed</label>
+                        <select class="form-control font-size-13" id="rev-item" style="border-color: #E8DED0;">
+                            <option>Nordic Minimalist Oak Sofa</option>
+                            <option>Artisan Solid Walnut Dining Table</option>
+                            <option>Japanese Low Platform Bed</option>
+                            <option>Ergonomic Velvet Lounge Chair</option>
+                            <option>Architectural Marble Coffee Table</option>
+                            <option>Minimalist Modular Wardrobe</option>
+                        </select>
+                    </div>
+                    <div class="form-group mb-4">
+                        <label class="font-size-13 font-weight-600 text-dark">Your Review</label>
+                        <textarea class="form-control" id="rev-text" rows="4" required placeholder="Describe the craftsmanship, grain texture, and delivery experience..." style="border-color: #E8DED0;"></textarea>
+                    </div>
+                    <button type="submit" class="primary_btn w-100 text-center py-3 font-size-14 font-weight-600">Publish Client Review</button>
+                </form>
+            </div>
         </div>
-        <p class="mb-0">&copy; 2025 WOODORA Inc. All rights reserved. Crafted for Comfort. Designed for Life.</p>
+    </div>
+</div>
+
+
+<footer class="footer-con position-relative" style="background: #1A2C23; color: #F7F4EE; padding: 70px 0 30px;">
+    <div class="container">
+        <div class="row">
+            <!-- Col 1: Brand & Bio -->
+            <div class="col-xl-4 col-lg-4 col-md-12 col-12 mb-4 mb-lg-0">
+                <div class="footer-logo mb-3">
+                    <a href="index.html">
+                        <img src="assets/images/footer-logo.svg" alt="WOODORA" style="height: 48px;" onerror="this.onerror=null; this.src='assets/images/footer-logo.png'">
+                    </a>
+                </div>
+                <p class="text font-size-14 mb-4" style="color: rgba(247, 244, 238, 0.8); line-height: 1.8;">
+                    Crafted for Comfort. Designed for Life. Curators of sustainable European solid hardwood furnishings, bespoke joinery, and architectural interior spaces.
+                </p>
+                <div class="d-flex gap-3 font-size-18">
+                    <a href="https://instagram.com" class="text-white mr-3" style="opacity: 0.8;" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://pinterest.com" class="text-white mr-3" style="opacity: 0.8;" title="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+                    <a href="https://facebook.com" class="text-white mr-3" style="opacity: 0.8;" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://linkedin.com" class="text-white" style="opacity: 0.8;" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Col 2: Curated Collections -->
+            <div class="col-xl-2 col-lg-2 col-md-4 col-6 mb-4 mb-md-0">
+                <h5 class="mb-3 font-weight-bold" style="font-family: 'Playfair Display', serif; color: #C8A882; font-size: 18px;">Collections</h5>
+                <ul class="list-unstyled mb-0 font-size-14" style="line-height: 2.2;">
+                    <li><a href="shop.html" class="text-white text-decoration-none" style="opacity: 0.85;">Sofas & Seating</a></li>
+                    <li><a href="shop.html" class="text-white text-decoration-none" style="opacity: 0.85;">Dining Tables</a></li>
+                    <li><a href="shop.html" class="text-white text-decoration-none" style="opacity: 0.85;">Platform Beds</a></li>
+                    <li><a href="shop.html" class="text-white text-decoration-none" style="opacity: 0.85;">Lounge Chairs</a></li>
+                    <li><a href="shop.html" class="text-white text-decoration-none" style="opacity: 0.85;">Marble Tables</a></li>
+                    <li><a href="shop.html" class="text-white text-decoration-none" style="opacity: 0.85;">Wardrobes</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 3: Client Experience -->
+            <div class="col-xl-3 col-lg-3 col-md-4 col-6 mb-4 mb-md-0">
+                <h5 class="mb-3 font-weight-bold" style="font-family: 'Playfair Display', serif; color: #C8A882; font-size: 18px;">Client Services</h5>
+                <ul class="list-unstyled mb-0 font-size-14" style="line-height: 2.2;">
+                    <li><a href="services.html" class="text-white text-decoration-none" style="opacity: 0.85;">Bespoke Joinery</a></li>
+                    <li><a href="portfolio.html" class="text-white text-decoration-none" style="opacity: 0.85;">Interior Lookbook</a></li>
+                    <li><a href="faq.html" class="text-white text-decoration-none" style="opacity: 0.85;">White Glove Delivery</a></li>
+                    <li><a href="faq.html" class="text-white text-decoration-none" style="opacity: 0.85;">10-Year Guarantee</a></li>
+                    <li><a href="team.html" class="text-white text-decoration-none" style="opacity: 0.85;">Our Master Artisans</a></li>
+                    <li><a href="review.html" class="text-white text-decoration-none" style="opacity: 0.85;">Client Reviews</a></li>
+                    <li><a href="contact.html" class="text-white text-decoration-none" style="opacity: 0.85;">Showroom Booking</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 4: Atelier & Concierge Contact -->
+            <div class="col-xl-3 col-lg-3 col-md-4 col-12">
+                <h5 class="mb-3 font-weight-bold" style="font-family: 'Playfair Display', serif; color: #C8A882; font-size: 18px;">Showroom Atelier</h5>
+                <p class="font-size-14 mb-2" style="opacity: 0.85;">
+                    <i class="fa-solid fa-location-dot mr-2" style="color: #C8A882;"></i> 420 Madison Avenue, New York, NY 10017
+                </p>
+                <p class="font-size-14 mb-2">
+                    <i class="fa-solid fa-phone mr-2" style="color: #C8A882;"></i>
+                    <a href="tel:+18009663672" class="text-white text-decoration-none">+1 (800) 966-3672</a>
+                </p>
+                <p class="font-size-14 mb-3">
+                    <i class="fa-solid fa-envelope mr-2" style="color: #C8A882;"></i>
+                    <a href="mailto:concierge@woodora.com" class="text-white text-decoration-none">concierge@woodora.com</a>
+                </p>
+                <div class="pt-2 border-top" style="border-color: rgba(255,255,255,0.15) !important;">
+                    <small class="d-block text-muted mb-2 font-size-12">Privileged Payment Partners:</small>
+                    <div class="d-flex gap-2 font-size-20" style="opacity: 0.75;">
+                        <i class="fa-brands fa-cc-visa mr-2"></i>
+                        <i class="fa-brands fa-cc-mastercard mr-2"></i>
+                        <i class="fa-brands fa-cc-amex mr-2"></i>
+                        <i class="fa-brands fa-cc-apple-pay"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row pt-4 mt-5 border-top align-items-center font-size-13" style="border-color: rgba(255,255,255,0.1) !important; color: rgba(247, 244, 238, 0.65);">
+            <div class="col-md-6 col-12 text-center text-md-left mb-2 mb-md-0">
+                &copy; 2025 WOODORA Atelier Inc. All rights reserved. Crafted for Comfort. Designed for Life.
+            </div>
+            <div class="col-md-6 col-12 text-center text-md-right">
+                <a href="privacy-policy.html" class="text-muted text-decoration-none mr-3">Privacy Policy</a>
+                <a href="term-of-use.html" class="text-muted text-decoration-none mr-3">Terms of Service</a>
+                <a href="cookie-policy.html" class="text-muted text-decoration-none">Cookie Policy</a>
+            </div>
+        </div>
     </div>
 </footer>
+
 
 <!-- Scripts -->
 <script src="assets/js/jquery-3.7.1.min.js"></script>
 <script src="assets/js/popper.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/owl.carousel.js"></script>
 <script src="assets/js/aos.js"></script>
 <script src="assets/js/woodora.js"></script>
+<script>
+    if (typeof AOS !== 'undefined') {
+        AOS.init({ duration: 800, once: true });
+    }
+</script>
+</body>
+</html>
+
 
 <script>
-    AOS.init({ duration: 800, once: true });
+$(document).ready(function() {
+    // Star Rating Click
+    $('.star-opt').on('click', function() {
+        const val = parseInt($(this).data('val'), 10);
+        $('#review-stars-val').val(val);
+        $('.star-opt').each(function(i) {
+            if (i < val) {
+                $(this).removeClass('fa-regular').addClass('fa-solid');
+            } else {
+                $(this).removeClass('fa-solid').addClass('fa-regular');
+            }
+        });
+    });
+
+    // Filter Buttons
+    $('.review-filter-btns button').on('click', function() {
+        $('.review-filter-btns button').removeClass('active btn-dark').addClass('btn-outline-dark');
+        $(this).removeClass('btn-outline-dark').addClass('active btn-dark');
+        const filter = $(this).data('filter');
+        if (filter === 'all') {
+            $('.review-card-item').fadeIn(200);
+        } else {
+            $('.review-card-item').each(function() {
+                const cats = $(this).data('category') || '';
+                if (cats.indexOf(filter) !== -1) {
+                    $(this).fadeIn(200);
+                } else {
+                    $(this).fadeOut(200);
+                }
+            });
+        }
+    });
+
+    // Submit Review Form
+    $('#client-review-form').on('submit', function(e) {
+        e.preventDefault();
+        const name = $('#rev-name').val();
+        const role = $('#rev-role').val() || 'Verified Client';
+        const item = $('#rev-item').val();
+        const stars = parseInt($('#review-stars-val').val(), 10) || 5;
+        const text = $('#rev-text').val();
+
+        let starsHtml = '';
+        for (let i = 0; i < stars; i++) starsHtml += '<i class="fa-solid fa-star"></i>';
+
+        const newCard = 
+            '<div class="col-lg-4 col-md-6 col-12 mb-4 review-card-item" data-category="living dining bedroom">' +
+                '<div class="testimonial-card-luxury h-100 p-4 rounded d-flex flex-column justify-content-between" style="background: #F4EFEB; border: 2px solid #805B42;">' +
+                    '<div>' +
+                        '<div class="d-flex justify-content-between align-items-center mb-2">' +
+                            '<div class="stars" style="color: #C8A882;">' + starsHtml + '</div>' +
+                            '<span class="badge badge-success font-size-11" style="background: #263D32;">Just Posted</span>' +
+                        '</div>' +
+                        '<h5 style="font-family: \'Playfair Display\', serif; font-size: 18px; color: #263D32; margin-bottom: 8px;">' + item + '</h5>' +
+                        '<p class="quote font-size-14 text-muted mb-4" style="line-height: 1.7;">"' + text + '"</p>' +
+                    '</div>' +
+                    '<div class="author-info d-flex align-items-center pt-3 border-top" style="border-color: #E8DED0 !important;">' +
+                        '<div class="rounded-circle mr-3 d-flex align-items-center justify-content-center text-white font-weight-bold" style="width: 50px; height: 50px; background: #263D32; font-size: 18px;">' + name.charAt(0) + '</div>' +
+                        '<div>' +
+                            '<h6 class="mb-0 font-weight-bold text-dark font-size-14">' + name + '</h6>' +
+                            '<small class="text-muted">' + role + '</small>' +
+                        '</div>' +
+                    '</div>' +
+                '</div>' +
+            '</div>';
+
+        $('#reviews-container').prepend(newCard);
+        $('#reviewModal').modal('hide');
+        window.Woodora.showToast('Review Published', 'Thank you, ' + name + '! Your client testimonial has been verified.');
+        this.reset();
+    });
+});
 </script>
 </body>
 </html>

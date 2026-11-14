@@ -30,3 +30,4 @@ module.exports = (req, res) => {
         msg: `Thank you, ${name}! Your inquiry has been delivered to WOODORA's interior concierge. Our design team will contact you shortly.`
     });
 };
+
