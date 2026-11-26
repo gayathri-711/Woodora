@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Account & Collector Dashboard – WOODORA Atelier</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta charset="utf-8">
+    <link rel="icon" type="image/svg+xml" href="./assets/images/favicon/favicon.svg">
+    <link rel="manifest" href="./assets/images/favicon/manifest.json">
+    <meta name="theme-color" content="#263D32">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Jost:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="assets/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/responsive.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/woodora.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="top-bar-con">
+    <div class="container">
+        <div class="top-bar-box">
+            <div class="top-bar-info">
+                <p class="text mb-0"><i class="fa-solid fa-truck-fast mr-2"></i> Complimentary White Glove In-Home Delivery on orders over <span>$250</span> | <strong>Private Client Privilege</strong></p>
+            </div>
+            <div class="top-bar-social d-none d-md-block">
+                <span class="text-white font-size-13"><i class="fa-solid fa-shield-halved mr-1"></i> Authenticated Session</span>
+            </div>
+        </div>
+    </div>
+</div>
+<header class="header sticky-top bg-white border-bottom">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light p-0">
+            <a class="navbar-brand" href="index.html">
+                <figure class="logo mb-0"><img src="assets/images/logo.svg" alt="WOODORA" class="img-fluid" onerror="this.src='assets/images/logo.png'"></figure>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navContent">
+                <ul class="navbar-nav ml-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Shop Catalog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                    <li class="nav-item active"><a class="nav-link font-weight-bold" href="account.html"><i class="fa-solid fa-user-circle mr-1"></i> My Account</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cart.html"><i class="fa-solid fa-bag-shopping"></i> <span class="badge badge-pill badge-success woodora-cart-badge">0</span></a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+<div class="account-subnav py-3" style="background:#F7F4EE; border-bottom:1px solid #E8DED0;">
+    <div class="container">
+        <div class="d-flex flex-wrap justify-content-between align-items-center">
+            <div class="mb-2 mb-md-0">
+                <h5 class="mb-0 font-weight-bold text-woodora-forest" style="font-family:'Playfair Display',serif;">WOODORA Private Client Suite</h5>
+                <small class="text-muted" id="user-greeting-sub">Authenticated Collector Account</small>
+            </div>
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a class="nav-link active bg-woodora-forest text-white" href="account.html"><i class="fa-solid fa-gauge mr-1"></i> Overview</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="my-orders.html"><i class="fa-solid fa-box mr-1"></i> Order History</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="my-wishlist.html"><i class="fa-solid fa-heart mr-1"></i> Wishlist</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="profile.html"><i class="fa-solid fa-address-card mr-1"></i> Profile & Address</a></li>
+                <li class="nav-item"><a class="nav-link text-danger" href="javascript:void(0)" onclick="handleLogout()"><i class="fa-solid fa-arrow-right-from-bracket mr-1"></i> Sign Out</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<section class="py-5" style="background:#FAF8F5; min-height:650px;">
+    <div class="container">
+        <!-- Profile Greeting Card -->
+        <div class="card border-0 shadow-sm mb-4" style="border-radius:12px; background:#fff;">
+            <div class="card-body p-4">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <div class="d-flex align-items-center">
+                            <div class="avatar-circle mr-3" style="width:64px; height:64px; border-radius:50%; background:#263D32; color:#fff; display:flex; align-items:center; justify-content:center; font-size:24px; font-weight:bold;" id="user-avatar">
+                                JS
+                            </div>
+                            <div>
+                                <h3 class="mb-1 font-weight-bold" style="font-family:'Playfair Display',serif;" id="account-name">Julian Sterling</h3>
+                                <p class="text-muted mb-0 font-size-14" id="account-email">julian@woodora.com | <span class="badge badge-success px-2 py-1" id="account-role-badge">Private Homeowner / Collector</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-md-right mt-3 mt-md-0">
+                        <a href="shop.html" class="btn btn-woodora-primary px-4 py-2"><i class="fa-solid fa-compass mr-1"></i> Browse Catalog</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 KPI Metric Cards -->
+        <div class="row mb-4">
+            <div class="col-md-4 mb-3 mb-md-0">
+                <div class="card border-0 shadow-sm p-4 h-100" style="border-radius:10px; border-left:4px solid #263D32;">
+                    <span class="text-muted font-size-13 text-uppercase font-weight-bold">Order History</span>
+                    <h2 class="font-weight-bold my-2" id="kpi-orders-count">2</h2>
+                    <a href="my-orders.html" class="text-woodora-walnut font-size-14 font-weight-bold">View all past orders <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3 mb-md-0">
+                <div class="card border-0 shadow-sm p-4 h-100" style="border-radius:10px; border-left:4px solid #C8A882;">
+                    <span class="text-muted font-size-13 text-uppercase font-weight-bold">Saved in Wishlist</span>
+                    <h2 class="font-weight-bold my-2" id="kpi-wishlist-count">3</h2>
+                    <a href="my-wishlist.html" class="text-woodora-walnut font-size-14 font-weight-bold">Open curated wishlist <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm p-4 h-100" style="border-radius:10px; border-left:4px solid #805B42;">
+                    <span class="text-muted font-size-13 text-uppercase font-weight-bold">Active Privilege Coupon</span>
+                    <h4 class="font-weight-bold my-2 text-woodora-forest">WOODORA10</h4>
+                    <span class="text-muted font-size-13">10% discount on orders over $100</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Orders Table -->
+        <div class="card border-0 shadow-sm" style="border-radius:12px; background:#fff;">
+            <div class="card-header bg-white border-0 p-4 d-flex justify-content-between align-items-center">
+                <h5 class="font-weight-bold mb-0 text-woodora-forest" style="font-family:'Playfair Display',serif;"><i class="fa-solid fa-receipt mr-2"></i> Recent Order Activity</h5>
+                <a href="my-orders.html" class="btn btn-sm btn-outline-dark">View All Orders</a>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover mb-0" id="recent-orders-table">
+                        <thead class="bg-light font-size-13 text-uppercase text-muted">
+                            <tr>
+                                <th>Order Ref</th>
+                                <th>Date</th>
+                                <th>Items</th>
+                                <th>Total</th>
+                                <th>Payment</th>
+                                <th>Fulfillment</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orders-tbody">
+                            <tr><td colspan="7" class="text-center py-4 text-muted"><i class="fa-solid fa-spinner fa-spin mr-2"></i> Loading orders from server...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+function renderUserInfo(user) {
+    if (!user) return;
+    $('#account-name').text(user.name);
+    $('#account-email').html(user.email + ' | <span class="badge badge-success px-2 py-1">' + (user.role || 'Homeowner') + '</span>');
+    $('#user-avatar').text(user.name.split(' ').map(n=>n[0]).join('').substring(0,2).toUpperCase());
+    $('#user-greeting-sub').text('Logged in as ' + user.name + ' (' + (user.role || 'Homeowner') + ')');
+
+    // Fetch user orders
+    fetch('/api/orders').then(r=>r.json()).then(res => {
+        if (res.success && res.orders) {
+            $('#kpi-orders-count').text(res.orders.length);
+            let html = '';
+            res.orders.slice(0, 5).forEach(o => {
+                const badgeClass = o.fulfillment_status === 'Delivered' ? 'badge-success' : (o.fulfillment_status === 'Shipped' ? 'badge-info' : 'badge-warning');
+                html += '<tr>' +
+                    '<td class="font-weight-bold text-woodora-forest">' + o.order_reference + '</td>' +
+                    '<td>' + (o.created_at ? o.created_at.substring(0, 10) : 'Recent') + '</td>' +
+                    '<td>' + (o.items ? o.items.length : 1) + ' item(s)</td>' +
+                    '<td class="font-weight-bold">$' + o.grand_total.toFixed(2) + '</td>' +
+                    '<td><span class="badge badge-light border text-dark font-size-12">' + o.payment_status + '</span></td>' +
+                    '<td><span class="badge ' + badgeClass + ' font-size-12">' + o.fulfillment_status + '</span></td>' +
+                    '<td><a href="my-orders.html" class="btn btn-sm btn-outline-secondary">Details</a></td>' +
+                '</tr>';
+            });
+            $('#orders-tbody').html(html || '<tr><td colspan="7" class="text-center py-4 text-muted">No orders found.</td></tr>');
+        }
+    });
+
+    // Fetch wishlist count
+    fetch('/api/wishlist').then(r=>r.json()).then(res => {
+        if (res.success) $('#kpi-wishlist-count').text(res.count || 0);
+    });
+}
+</script>
+
+<footer class="footer-con bg-woodora-forest text-white pt-5 pb-4 mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <img src="assets/images/footer-logo.svg" alt="WOODORA" style="max-height:48px;" class="mb-3" onerror="this.src='assets/images/footer-logo.png'">
+                <p class="text-white-50 font-size-14">Crafted for Comfort. Designed for Life. Scandinavian minimalism blended with timeless Japanese architectural joinery.</p>
+                <div class="text-white-50 font-size-13">
+                    <p class="mb-1"><i class="fa-solid fa-location-dot mr-2 text-woodora-gold"></i> Atelier: 450 Lexington Ave, New York, NY</p>
+                    <p class="mb-1"><i class="fa-solid fa-phone mr-2 text-woodora-gold"></i> Concierge: +1 (800) 482-9012</p>
+                    <p><i class="fa-solid fa-envelope mr-2 text-woodora-gold"></i> concierge@woodora.com</p>
+                </div>
+            </div>
+            <div class="col-lg-2 col-6 mb-4">
+                <h6 class="text-woodora-gold font-weight-bold mb-3">Living Collections</h6>
+                <ul class="list-unstyled text-white-50 font-size-14">
+                    <li class="mb-2"><a href="shop.html?category=sofas" class="text-white-50">Lounge Sofas</a></li>
+                    <li class="mb-2"><a href="shop.html?category=dining-tables" class="text-white-50">Dining Tables</a></li>
+                    <li class="mb-2"><a href="shop.html?category=chairs" class="text-white-50">Accent Chairs</a></li>
+                    <li class="mb-2"><a href="shop.html?category=beds" class="text-white-50">Platform Beds</a></li>
+                    <li><a href="shop.html" class="text-white-50">View All</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-6 mb-4">
+                <h6 class="text-woodora-gold font-weight-bold mb-3">Customer Service</h6>
+                <ul class="list-unstyled text-white-50 font-size-14">
+                    <li class="mb-2"><a href="account.html" class="text-white-50">My Account</a></li>
+                    <li class="mb-2"><a href="my-orders.html" class="text-white-50">Track Orders</a></li>
+                    <li class="mb-2"><a href="faq.html" class="text-white-50">Timber Care & FAQ</a></li>
+                    <li class="mb-2"><a href="contact.html" class="text-white-50">Showroom Bookings</a></li>
+                    <li><a href="privacy-policy.html" class="text-white-50">Privacy & Terms</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 mb-4">
+                <h6 class="text-woodora-gold font-weight-bold mb-3">Trade & Administration</h6>
+                <p class="text-white-50 font-size-13">Architects, interior designers, and store administrators:</p>
+                <a href="admin-login.html" class="btn btn-outline-light btn-sm mb-2"><i class="fa-solid fa-lock mr-1"></i> Administration Portal</a>
+                <div class="mt-3">
+                    <span class="badge badge-warning text-dark px-2 py-1"><i class="fa-solid fa-tag mr-1"></i> Coupon: WOODORA10</span>
+                </div>
+            </div>
+        </div>
+        <hr style="border-color: rgba(255,255,255,0.1);">
+        <div class="d-flex flex-wrap justify-content-between align-items-center font-size-13 text-white-50">
+            <p class="mb-0">&copy; 2026 WOODORA Atelier Inc. All rights reserved.</p>
+            <div>
+                <a href="privacy-policy.html" class="text-white-50 mr-3">Privacy Policy</a>
+                <a href="term-of-use.html" class="text-white-50 mr-3">Terms of Service</a>
+                <a href="cookie-policy.html" class="text-white-50">Cookie Preferences</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="assets/js/jquery-3.7.1.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/woodora.js"></script>
+<script>
+function handleLogout() {
+    fetch('/api/auth/logout', { method: 'POST' }).finally(() => {
+        localStorage.removeItem('woodora_active_user');
+        sessionStorage.removeItem('woodora_token');
+        window.location.href = 'login.html';
+    });
+}
+// Check user auth on account pages
+$(document).ready(function() {
+    fetch('/api/auth/me').then(r => r.json()).then(res => {
+        if (!res.success) {
+            // Check localStorage fallback for demo continuity
+            const localUser = localStorage.getItem('woodora_active_user');
+            if (!localUser) {
+                window.location.href = 'login.html?redirect=' + encodeURIComponent(window.location.pathname);
+                return;
+            }
+            renderUserInfo(JSON.parse(localUser));
+        } else {
+            renderUserInfo(res.user);
+        }
+    }).catch(() => {
+        const localUser = localStorage.getItem('woodora_active_user');
+        if (localUser) renderUserInfo(JSON.parse(localUser));
+        else window.location.href = 'login.html';
+    });
+});
+</script>
+</body>
+</html>
+

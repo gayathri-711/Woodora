@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Order History & Shipment Tracking – WOODORA Atelier</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta charset="utf-8">
+    <link rel="icon" type="image/svg+xml" href="./assets/images/favicon/favicon.svg">
+    <link rel="manifest" href="./assets/images/favicon/manifest.json">
+    <meta name="theme-color" content="#263D32">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Jost:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="assets/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/responsive.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/woodora.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="top-bar-con">
+    <div class="container">
+        <div class="top-bar-box">
+            <div class="top-bar-info">
+                <p class="text mb-0"><i class="fa-solid fa-truck-fast mr-2"></i> Complimentary White Glove In-Home Delivery on orders over <span>$250</span> | <strong>Private Client Privilege</strong></p>
+            </div>
+            <div class="top-bar-social d-none d-md-block">
+                <span class="text-white font-size-13"><i class="fa-solid fa-shield-halved mr-1"></i> Authenticated Session</span>
+            </div>
+        </div>
+    </div>
+</div>
+<header class="header sticky-top bg-white border-bottom">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light p-0">
+            <a class="navbar-brand" href="index.html">
+                <figure class="logo mb-0"><img src="assets/images/logo.svg" alt="WOODORA" class="img-fluid" onerror="this.src='assets/images/logo.png'"></figure>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navContent">
+                <ul class="navbar-nav ml-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Shop Catalog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                    <li class="nav-item active"><a class="nav-link font-weight-bold" href="account.html"><i class="fa-solid fa-user-circle mr-1"></i> My Account</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cart.html"><i class="fa-solid fa-bag-shopping"></i> <span class="badge badge-pill badge-success woodora-cart-badge">0</span></a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+<div class="account-subnav py-3" style="background:#F7F4EE; border-bottom:1px solid #E8DED0;">
+    <div class="container">
+        <div class="d-flex flex-wrap justify-content-between align-items-center">
+            <div class="mb-2 mb-md-0">
+                <h5 class="mb-0 font-weight-bold text-woodora-forest" style="font-family:'Playfair Display',serif;">WOODORA Private Client Suite</h5>
+                <small class="text-muted" id="user-greeting-sub">Authenticated Collector Account</small>
+            </div>
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a class="nav-link text-dark" href="account.html"><i class="fa-solid fa-gauge mr-1"></i> Overview</a></li>
+                <li class="nav-item"><a class="nav-link active bg-woodora-forest text-white" href="my-orders.html"><i class="fa-solid fa-box mr-1"></i> Order History</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="my-wishlist.html"><i class="fa-solid fa-heart mr-1"></i> Wishlist</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="profile.html"><i class="fa-solid fa-address-card mr-1"></i> Profile & Address</a></li>
+                <li class="nav-item"><a class="nav-link text-danger" href="javascript:void(0)" onclick="handleLogout()"><i class="fa-solid fa-arrow-right-from-bracket mr-1"></i> Sign Out</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<section class="py-5" style="background:#FAF8F5; min-height:700px;">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <h3 class="font-weight-bold text-woodora-forest mb-1" style="font-family:'Playfair Display',serif;">My Order History</h3>
+                <p class="text-muted mb-0">Track real-time shipment status, order references, and White Glove assembly details.</p>
+            </div>
+            <a href="shop.html" class="btn btn-woodora-primary"><i class="fa-solid fa-plus mr-1"></i> Continue Shopping</a>
+        </div>
+
+        <div id="orders-container">
+            <div class="text-center py-5 text-muted"><i class="fa-solid fa-spinner fa-spin fa-2x mb-3"></i><p>Retrieving your authenticated order history...</p></div>
+        </div>
+    </div>
+</section>
+<script>
+function renderUserInfo(user) {
+    fetch('/api/orders').then(r=>r.json()).then(res => {
+        if (!res.success || !res.orders || res.orders.length === 0) {
+            $('#orders-container').html('<div class="card p-5 text-center border-0 shadow-sm" style="border-radius:12px;"><i class="fa-solid fa-box-open fa-3x text-muted mb-3"></i><h4>No Orders Found</h4><p class="text-muted">You have not placed any orders yet with WOODORA.</p><a href="shop.html" class="btn btn-woodora-primary mx-auto">Explore Our Collections</a></div>');
+            return;
+        }
+
+        let html = '';
+        res.orders.forEach(o => {
+            const statusClass = o.fulfillment_status === 'Delivered' ? 'badge-success' : (o.fulfillment_status === 'Shipped' ? 'badge-info' : 'badge-warning');
+            let itemsHtml = '';
+            (o.items || []).forEach(it => {
+                itemsHtml += '<div class="d-flex justify-content-between align-items-center py-2 border-bottom">' +
+                    '<div>' +
+                        '<span class="font-weight-bold text-woodora-forest">' + it.title + '</span>' +
+                        (it.configuration ? '<br><small class="text-muted">Configuration: ' + it.configuration + '</small>' : '') +
+                        (it.finish_color ? ' | <small class="text-muted">Finish: ' + it.finish_color + '</small>' : '') +
+                    '</div>' +
+                    '<div class="text-right">' +
+                        '<span>Qty: ' + it.quantity + ' &times; $' + it.unit_price.toFixed(2) + '</span>' +
+                        '<br><span class="font-weight-bold text-woodora-forest">$' + it.line_total.toFixed(2) + '</span>' +
+                    '</div>' +
+                '</div>';
+            });
+
+            html += '<div class="card border-0 shadow-sm mb-4" style="border-radius:12px; overflow:hidden;">' +
+                '<div class="card-header bg-white p-4 border-bottom d-flex flex-wrap justify-content-between align-items-center">' +
+                    '<div>' +
+                        '<span class="text-muted font-size-13 text-uppercase font-weight-bold">Order Reference</span>' +
+                        '<h5 class="mb-0 font-weight-bold text-woodora-forest font-monospace">' + o.order_reference + '</h5>' +
+                        '<small class="text-muted">Placed on: ' + (o.created_at || 'Recent') + '</small>' +
+                    '</div>' +
+                    '<div class="text-md-right mt-2 mt-md-0">' +
+                        '<span class="badge ' + statusClass + ' px-3 py-2 font-size-13 mr-2">' + o.fulfillment_status + '</span>' +
+                        '<span class="badge badge-light border px-3 py-2 font-size-13">' + o.payment_status + '</span>' +
+                    '</div>' +
+                '</div>' +
+                '<div class="card-body p-4">' +
+                    '<div class="row">' +
+                        '<div class="col-md-7 border-right pr-md-4">' +
+                            '<h6 class="font-weight-bold text-uppercase font-size-13 text-muted mb-3">Order Items</h6>' +
+                            itemsHtml +
+                            (o.delivery_instructions ? '<div class="mt-3 p-3 bg-light rounded font-size-13"><i class="fa-solid fa-truck-ramp-box mr-1 text-woodora-walnut"></i> <strong>Delivery Notes:</strong> ' + o.delivery_instructions + '</div>' : '') +
+                        '</div>' +
+                        '<div class="col-md-5 pl-md-4 mt-3 mt-md-0">' +
+                            '<h6 class="font-weight-bold text-uppercase font-size-13 text-muted mb-3">Order & Shipping Summary</h6>' +
+                            '<div class="d-flex justify-content-between font-size-14 mb-1"><span>Subtotal:</span><span>$' + o.subtotal.toFixed(2) + '</span></div>' +
+                            (o.discount > 0 ? '<div class="d-flex justify-content-between font-size-14 mb-1 text-success"><span>Privilege Coupon:</span><span>-$' + o.discount.toFixed(2) + '</span></div>' : '') +
+                            '<div class="d-flex justify-content-between font-size-14 mb-1"><span>Estimated Tax (5%):</span><span>$' + o.tax.toFixed(2) + '</span></div>' +
+                            '<div class="d-flex justify-content-between font-size-14 mb-2"><span>White Glove Delivery:</span><span>' + (o.shipping_fee === 0 ? '<strong class="text-success">Complimentary</strong>' : '$' + o.shipping_fee.toFixed(2)) + '</span></div>' +
+                            '<div class="d-flex justify-content-between font-size-18 font-weight-bold pt-2 border-top text-woodora-forest"><span>Total:</span><span>$' + o.grand_total.toFixed(2) + '</span></div>' +
+                            '<div class="mt-3 pt-3 border-top font-size-13 text-muted">' +
+                                '<i class="fa-solid fa-location-dot mr-1"></i> <strong>Shipping Address:</strong><br>' + o.shipping_address +
+                            '</div>' +
+                        '</div>' +
+                    '</div>' +
+                '</div>' +
+            '</div>';
+        });
+
+        $('#orders-container').html(html);
+    });
+}
+</script>
+
+<footer class="footer-con bg-woodora-forest text-white pt-5 pb-4 mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <img src="assets/images/footer-logo.svg" alt="WOODORA" style="max-height:48px;" class="mb-3" onerror="this.src='assets/images/footer-logo.png'">
+                <p class="text-white-50 font-size-14">Crafted for Comfort. Designed for Life. Scandinavian minimalism blended with timeless Japanese architectural joinery.</p>
+                <div class="text-white-50 font-size-13">
+                    <p class="mb-1"><i class="fa-solid fa-location-dot mr-2 text-woodora-gold"></i> Atelier: 450 Lexington Ave, New York, NY</p>
+                    <p class="mb-1"><i class="fa-solid fa-phone mr-2 text-woodora-gold"></i> Concierge: +1 (800) 482-9012</p>
+                    <p><i class="fa-solid fa-envelope mr-2 text-woodora-gold"></i> concierge@woodora.com</p>
+                </div>
+            </div>
+            <div class="col-lg-2 col-6 mb-4">
+                <h6 class="text-woodora-gold font-weight-bold mb-3">Living Collections</h6>
+                <ul class="list-unstyled text-white-50 font-size-14">
+                    <li class="mb-2"><a href="shop.html?category=sofas" class="text-white-50">Lounge Sofas</a></li>
+                    <li class="mb-2"><a href="shop.html?category=dining-tables" class="text-white-50">Dining Tables</a></li>
+                    <li class="mb-2"><a href="shop.html?category=chairs" class="text-white-50">Accent Chairs</a></li>
+                    <li class="mb-2"><a href="shop.html?category=beds" class="text-white-50">Platform Beds</a></li>
+                    <li><a href="shop.html" class="text-white-50">View All</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-6 mb-4">
+                <h6 class="text-woodora-gold font-weight-bold mb-3">Customer Service</h6>
+                <ul class="list-unstyled text-white-50 font-size-14">
+                    <li class="mb-2"><a href="account.html" class="text-white-50">My Account</a></li>
+                    <li class="mb-2"><a href="my-orders.html" class="text-white-50">Track Orders</a></li>
+                    <li class="mb-2"><a href="faq.html" class="text-white-50">Timber Care & FAQ</a></li>
+                    <li class="mb-2"><a href="contact.html" class="text-white-50">Showroom Bookings</a></li>
+                    <li><a href="privacy-policy.html" class="text-white-50">Privacy & Terms</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 mb-4">
+                <h6 class="text-woodora-gold font-weight-bold mb-3">Trade & Administration</h6>
+                <p class="text-white-50 font-size-13">Architects, interior designers, and store administrators:</p>
+                <a href="admin-login.html" class="btn btn-outline-light btn-sm mb-2"><i class="fa-solid fa-lock mr-1"></i> Administration Portal</a>
+                <div class="mt-3">
+                    <span class="badge badge-warning text-dark px-2 py-1"><i class="fa-solid fa-tag mr-1"></i> Coupon: WOODORA10</span>
+                </div>
+            </div>
+        </div>
+        <hr style="border-color: rgba(255,255,255,0.1);">
+        <div class="d-flex flex-wrap justify-content-between align-items-center font-size-13 text-white-50">
+            <p class="mb-0">&copy; 2026 WOODORA Atelier Inc. All rights reserved.</p>
+            <div>
+                <a href="privacy-policy.html" class="text-white-50 mr-3">Privacy Policy</a>
+                <a href="term-of-use.html" class="text-white-50 mr-3">Terms of Service</a>
+                <a href="cookie-policy.html" class="text-white-50">Cookie Preferences</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="assets/js/jquery-3.7.1.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/woodora.js"></script>
+<script>
+function handleLogout() {
+    fetch('/api/auth/logout', { method: 'POST' }).finally(() => {
+        localStorage.removeItem('woodora_active_user');
+        sessionStorage.removeItem('woodora_token');
+        window.location.href = 'login.html';
+    });
+}
+// Check user auth on account pages
+$(document).ready(function() {
+    fetch('/api/auth/me').then(r => r.json()).then(res => {
+        if (!res.success) {
+            // Check localStorage fallback for demo continuity
+            const localUser = localStorage.getItem('woodora_active_user');
+            if (!localUser) {
+                window.location.href = 'login.html?redirect=' + encodeURIComponent(window.location.pathname);
+                return;
+            }
+            renderUserInfo(JSON.parse(localUser));
+        } else {
+            renderUserInfo(res.user);
+        }
+    }).catch(() => {
+        const localUser = localStorage.getItem('woodora_active_user');
+        if (localUser) renderUserInfo(JSON.parse(localUser));
+        else window.location.href = 'login.html';
+    });
+});
+</script>
+</body>
+</html>
+

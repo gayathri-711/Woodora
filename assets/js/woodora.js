@@ -306,7 +306,7 @@
                 $('.last_list').append(
                     '<div class="user-auth-pill d-inline-flex align-items-center ml-2" style="background: #F7F4EE; padding: 4px 12px; border-radius: 20px; border: 1px solid #E8DED0;">' +
                         '<i class="fa-solid fa-circle-user mr-1" style="color: #805B42; font-size: 16px;"></i>' +
-                        '<span class="font-size-13 font-weight-bold mr-2 text-dark d-none d-sm-inline">' + firstName + '</span>' +
+                        '<a href="account.html" class="font-size-13 font-weight-bold mr-2 text-dark text-decoration-none d-none d-sm-inline" title="Open My Account">' + firstName + '</a>' +
                         '<button class="btn-woodora-logout btn p-0 border-0 text-muted" title="Sign Out (' + user.email + ')" style="background: none; font-size: 13px; cursor: pointer;"><i class="fa-solid fa-arrow-right-from-bracket"></i></button>' +
                     '</div>'
                 );

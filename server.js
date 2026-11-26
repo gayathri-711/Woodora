@@ -2,6 +2,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const querystring = require('querystring');
+const { handleApiRequest } = require('./server/api');
 
 const PORT = process.env.PORT || 8000;
 const ROOT_DIR = __dirname;
@@ -63,11 +64,11 @@ function resolveFilePath(pathname) {
     return null;
 }
 
-const server = http.createServer((req, res) => {
+const server = http.createServer(async (req, res) => {
     // Enable CORS
     res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Woodora-Token');
 
     if (req.method === 'OPTIONS') {
         res.writeHead(204);
@@ -78,13 +79,18 @@ const server = http.createServer((req, res) => {
     const parsedUrl = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
     let pathname = decodeURIComponent(parsedUrl.pathname);
 
-    // Mock PHP contact form endpoint for full interactive functionality
+    // 1. Route API requests directly to WOODORA REST API Engine
+    if (pathname.startsWith('/api/')) {
+        return handleApiRequest(req, res, pathname, parsedUrl.searchParams);
+    }
+
+    // 2. Backward compatible PHP contact form endpoint
     if (pathname === '/contact-form.php' && req.method === 'POST') {
         let body = '';
         req.on('data', chunk => { body += chunk.toString(); });
         req.on('end', () => {
             const parsedData = querystring.parse(body);
-            const fname = parsedData.fname || 'Guest';
+            const fname = parsedData.fname || 'Valued Client';
             res.writeHead(200, { 'Content-Type': 'application/json' });
             res.end(JSON.stringify({
                 status: 'Success',
@@ -94,7 +100,7 @@ const server = http.createServer((req, res) => {
         return;
     }
 
-    // Strip legacy /contrive/ prefix if present
+    // 3. Strip legacy /contrive/ prefix if present
     if (pathname.startsWith('/contrive/')) {
         pathname = pathname.replace(/^\/contrive/, '');
     }
@@ -106,10 +112,10 @@ const server = http.createServer((req, res) => {
         res.end(`<!DOCTYPE html>
 <html>
 <head><title>404 Not Found - WOODORA</title></head>
-<body style="font-family: sans-serif; text-align: center; padding: 50px;">
+<body style="font-family: sans-serif; text-align: center; padding: 50px; background: #F7F4EE; color: #252525;">
     <h2>404 - Page Not Found</h2>
     <p>Requested: ${pathname}</p>
-    <a href="/">Return to WOODORA Homepage</a>
+    <a href="/" style="display: inline-block; padding: 10px 20px; background: #263D32; color: #fff; text-decoration: none; border-radius: 4px;">Return to WOODORA Homepage</a>
 </body>
 </html>`);
         return;
@@ -129,6 +135,8 @@ server.listen(PORT, () => {
     console.log(`  Crafted for Comfort. Designed for Life.              `);
     console.log(`=======================================================`);
     console.log(`  Application running at: http://localhost:${PORT}/     `);
-    console.log(`  Press Ctrl+C to terminate.                           `);
+    console.log(`  REST API ready at:      http://localhost:${PORT}/api/ `);
     console.log(`=======================================================`);
 });
+
+module.exports = server;

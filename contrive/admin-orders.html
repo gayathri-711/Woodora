@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Orders & Logistics – WOODORA Atelier Administration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="icon" type="image/svg+xml" href="./assets/images/favicon/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="assets/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="assets/css/woodora.css" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #F7F4EE; color: #252525; }
+        .sidebar { width: 260px; min-height: 100vh; background: #263D32; color: #fff; position: fixed; top: 0; left: 0; z-index: 100; transition: all 0.3s; }
+        .main-content { margin-left: 260px; padding: 30px; }
+        .sidebar-brand { padding: 25px 20px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .sidebar-menu { list-style: none; padding: 15px 0; margin: 0; }
+        .sidebar-menu li a { display: flex; align-items: center; padding: 12px 25px; color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px; font-weight: 500; transition: 0.2s; }
+        .sidebar-menu li a:hover, .sidebar-menu li.active a { color: #fff; background: rgba(200,168,130,0.15); border-left: 4px solid #C8A882; }
+        .sidebar-menu li a i { width: 24px; font-size: 16px; margin-right: 10px; color: #C8A882; }
+        .card { border-radius: 10px; border: 0; box-shadow: 0 2px 12px rgba(0,0,0,0.04); background: #fff; }
+        .badge-pending { background: #fff3cd; color: #856404; }
+        .badge-confirmed { background: #d1ecf1; color: #0c5460; }
+        .badge-processing { background: #cce5ff; color: #004085; }
+        .badge-shipped { background: #e2e3e5; color: #383d41; }
+        .badge-delivered { background: #d4edda; color: #155724; }
+        @media (max-width: 991px) {
+            .sidebar { margin-left: -260px; }
+            .sidebar.active { margin-left: 0; }
+            .main-content { margin-left: 0; }
+        }
+    </style>
+</head>
+<body>
+<nav class="sidebar">
+    <div class="sidebar-brand">
+        <img src="assets/images/footer-logo.svg" alt="WOODORA" style="max-height:36px;" onerror="this.src='assets/images/logo.png'">
+        <div class="font-size-12 text-white-50 mt-2">Executive Back-Office Portal</div>
+    </div>
+    <ul class="sidebar-menu">
+        <li class=""><a href="admin-dashboard.html"><i class="fa-solid fa-gauge-high"></i> Dashboard</a></li>
+        <li class=""><a href="admin-products.html"><i class="fa-solid fa-couch"></i> Furniture Products</a></li>
+        <li class="active"><a href="admin-orders.html"><i class="fa-solid fa-receipt"></i> Orders & Logistics</a></li>
+        <li class=""><a href="admin-customers.html"><i class="fa-solid fa-users"></i> Client Directory</a></li>
+        <li class=""><a href="admin-inquiries.html"><i class="fa-solid fa-envelope-open-text"></i> Client Inquiries</a></li>
+        <li class=""><a href="admin-appointments.html"><i class="fa-solid fa-calendar-check"></i> Consultations</a></li>
+        <li class=""><a href="admin-coupons.html"><i class="fa-solid fa-tags"></i> Coupons & Promos</a></li>
+        <li class="mt-4 border-top pt-3" style="border-color: rgba(255,255,255,0.1);"><a href="index.html" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Storefront</a></li>
+        <li><a href="javascript:void(0)" onclick="adminLogout()" class="text-danger"><i class="fa-solid fa-arrow-right-from-bracket text-danger"></i> Sign Out</a></li>
+    </ul>
+</nav>
+
+<div class="main-content">
+    <div class="d-flex justify-content-between align-items-center mb-4 pb-2 border-bottom">
+        <div>
+            <h3 class="font-weight-bold mb-1" style="font-family:'Playfair Display',serif; color:#263D32;">Orders & Logistics</h3>
+            <span class="text-muted font-size-13">WOODORA Atelier Administration Management System</span>
+        </div>
+        <div class="d-flex align-items-center">
+            <span class="badge badge-success px-3 py-2 mr-3"><i class="fa-solid fa-shield-halved mr-1"></i> Admin Session Active</span>
+            <div class="avatar bg-woodora-forest text-white rounded-circle d-flex align-items-center justify-content-center font-weight-bold" style="width:38px; height:38px;">AD</div>
+        </div>
+    </div>
+    
+<div class="card p-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h5 class="font-weight-bold mb-0 text-woodora-forest"><i class="fa-solid fa-boxes-packing mr-2"></i> Orders & Logistics Fulfillment</h5>
+            <small class="text-muted">Track order references, client shipping destinations, and advance fulfillment statuses.</small>
+        </div>
+        <span class="badge badge-light border p-2"><i class="fa-solid fa-shield mr-1"></i> Authoritative SQLite Order Store</span>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover font-size-13 align-middle">
+            <thead class="bg-light text-muted">
+                <tr>
+                    <th>Ref #</th>
+                    <th>Customer</th>
+                    <th>Items</th>
+                    <th>Total</th>
+                    <th>Payment</th>
+                    <th>Fulfillment State</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="orders-tbody">
+                <tr><td colspan="7" class="text-center py-4 text-muted"><i class="fa-solid fa-spinner fa-spin mr-2"></i> Loading orders...</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+function loadOrders() {
+    fetch('/api/admin/orders').then(r=>r.json()).then(res => {
+        if (!res.success) return;
+        let html = '';
+        res.orders.forEach(o => {
+            html += '<tr>' +
+                '<td class="font-weight-bold text-woodora-forest">' + o.order_reference + '</td>' +
+                '<td><strong>' + o.customer_name + '</strong><br><small class="text-muted">' + (o.customer_email || '') + '</small></td>' +
+                '<td>' + (o.items ? o.items.length : 1) + ' line item(s)</td>' +
+                '<td class="font-weight-bold">$' + o.grand_total.toFixed(2) + '</td>' +
+                '<td><span class="badge badge-light border">' + o.payment_status + '</span></td>' +
+                '<td>' +
+                    '<select class="form-control form-control-sm" style="width:130px;" onchange="updateOrderStatus(' + o.id + ', this.value)">' +
+                        '<option value="Confirmed" ' + (o.fulfillment_status === 'Confirmed' ? 'selected' : '') + '>Confirmed</option>' +
+                        '<option value="Processing" ' + (o.fulfillment_status === 'Processing' ? 'selected' : '') + '>Processing</option>' +
+                        '<option value="Shipped" ' + (o.fulfillment_status === 'Shipped' ? 'selected' : '') + '>Shipped</option>' +
+                        '<option value="Delivered" ' + (o.fulfillment_status === 'Delivered' ? 'selected' : '') + '>Delivered</option>' +
+                        '<option value="Cancelled" ' + (o.fulfillment_status === 'Cancelled' ? 'selected' : '') + '>Cancelled</option>' +
+                    '</select>' +
+                '</td>' +
+                '<td><button class="btn btn-sm btn-outline-info" onclick="alert(\'Shipment Destination: ' + (o.shipping_address || 'Atelier Delivery') + '\')">Destination</button></td>' +
+            '</tr>';
+        });
+        document.getElementById('orders-tbody').innerHTML = html;
+    });
+}
+function updateOrderStatus(orderId, fulfillmentStatus) {
+    fetch('/api/admin/orders/status', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ orderId, fulfillmentStatus })
+    }).then(r=>r.json()).then(res => {
+        if (res.success) alert('Fulfillment status transitioned to ' + fulfillmentStatus);
+    });
+}
+document.addEventListener('DOMContentLoaded', loadOrders);
+</script>
+
+</div>
+
+<script src="assets/js/jquery-3.7.1.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script>
+function adminLogout() {
+    sessionStorage.removeItem('woodora_admin_token');
+    window.location.href = 'admin-login.html';
+}
+</script>
+</body>
+</html>

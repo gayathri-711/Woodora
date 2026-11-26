@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Promotional Coupons – WOODORA Atelier Administration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="icon" type="image/svg+xml" href="./assets/images/favicon/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="assets/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="assets/css/woodora.css" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #F7F4EE; color: #252525; }
+        .sidebar { width: 260px; min-height: 100vh; background: #263D32; color: #fff; position: fixed; top: 0; left: 0; z-index: 100; transition: all 0.3s; }
+        .main-content { margin-left: 260px; padding: 30px; }
+        .sidebar-brand { padding: 25px 20px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .sidebar-menu { list-style: none; padding: 15px 0; margin: 0; }
+        .sidebar-menu li a { display: flex; align-items: center; padding: 12px 25px; color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px; font-weight: 500; transition: 0.2s; }
+        .sidebar-menu li a:hover, .sidebar-menu li.active a { color: #fff; background: rgba(200,168,130,0.15); border-left: 4px solid #C8A882; }
+        .sidebar-menu li a i { width: 24px; font-size: 16px; margin-right: 10px; color: #C8A882; }
+        .card { border-radius: 10px; border: 0; box-shadow: 0 2px 12px rgba(0,0,0,0.04); background: #fff; }
+        .badge-pending { background: #fff3cd; color: #856404; }
+        .badge-confirmed { background: #d1ecf1; color: #0c5460; }
+        .badge-processing { background: #cce5ff; color: #004085; }
+        .badge-shipped { background: #e2e3e5; color: #383d41; }
+        .badge-delivered { background: #d4edda; color: #155724; }
+        @media (max-width: 991px) {
+            .sidebar { margin-left: -260px; }
+            .sidebar.active { margin-left: 0; }
+            .main-content { margin-left: 0; }
+        }
+    </style>
+</head>
+<body>
+<nav class="sidebar">
+    <div class="sidebar-brand">
+        <img src="assets/images/footer-logo.svg" alt="WOODORA" style="max-height:36px;" onerror="this.src='assets/images/logo.png'">
+        <div class="font-size-12 text-white-50 mt-2">Executive Back-Office Portal</div>
+    </div>
+    <ul class="sidebar-menu">
+        <li class=""><a href="admin-dashboard.html"><i class="fa-solid fa-gauge-high"></i> Dashboard</a></li>
+        <li class=""><a href="admin-products.html"><i class="fa-solid fa-couch"></i> Furniture Products</a></li>
+        <li class=""><a href="admin-orders.html"><i class="fa-solid fa-receipt"></i> Orders & Logistics</a></li>
+        <li class=""><a href="admin-customers.html"><i class="fa-solid fa-users"></i> Client Directory</a></li>
+        <li class=""><a href="admin-inquiries.html"><i class="fa-solid fa-envelope-open-text"></i> Client Inquiries</a></li>
+        <li class=""><a href="admin-appointments.html"><i class="fa-solid fa-calendar-check"></i> Consultations</a></li>
+        <li class="active"><a href="admin-coupons.html"><i class="fa-solid fa-tags"></i> Coupons & Promos</a></li>
+        <li class="mt-4 border-top pt-3" style="border-color: rgba(255,255,255,0.1);"><a href="index.html" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Storefront</a></li>
+        <li><a href="javascript:void(0)" onclick="adminLogout()" class="text-danger"><i class="fa-solid fa-arrow-right-from-bracket text-danger"></i> Sign Out</a></li>
+    </ul>
+</nav>
+
+<div class="main-content">
+    <div class="d-flex justify-content-between align-items-center mb-4 pb-2 border-bottom">
+        <div>
+            <h3 class="font-weight-bold mb-1" style="font-family:'Playfair Display',serif; color:#263D32;">Promotional Coupons</h3>
+            <span class="text-muted font-size-13">WOODORA Atelier Administration Management System</span>
+        </div>
+        <div class="d-flex align-items-center">
+            <span class="badge badge-success px-3 py-2 mr-3"><i class="fa-solid fa-shield-halved mr-1"></i> Admin Session Active</span>
+            <div class="avatar bg-woodora-forest text-white rounded-circle d-flex align-items-center justify-content-center font-weight-bold" style="width:38px; height:38px;">AD</div>
+        </div>
+    </div>
+    
+<div class="card p-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h5 class="font-weight-bold mb-0 text-woodora-forest"><i class="fa-solid fa-ticket mr-2"></i> Promotional Coupons & Trade Privileges</h5>
+            <small class="text-muted">Manage active discount vouchers for online checkout.</small>
+        </div>
+        <button class="btn btn-woodora-primary" data-toggle="modal" data-target="#addCouponModal"><i class="fa-solid fa-plus mr-1"></i> Create Coupon</button>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover font-size-13 align-middle">
+            <thead class="bg-light text-muted">
+                <tr>
+                    <th>Coupon Code</th>
+                    <th>Discount</th>
+                    <th>Minimum Spend</th>
+                    <th>Status</th>
+                    <th>Expires</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="coupons-tbody">
+                <tr><td colspan="6" class="text-center py-4 text-muted"><i class="fa-solid fa-spinner fa-spin mr-2"></i> Loading coupons...</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Add Coupon Modal -->
+<div class="modal fade" id="addCouponModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-woodora-forest text-white">
+                <h5 class="modal-title font-weight-bold">Create Privilege Voucher</h5>
+                <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body p-4">
+                <form id="add-coupon-form" onsubmit="createCoupon(event)">
+                    <div class="form-group">
+                        <label class="font-weight-bold font-size-13">Coupon Code</label>
+                        <input type="text" class="form-control text-uppercase" id="c-code" required placeholder="e.g. AUTUMN20">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-6">
+                            <label class="font-weight-bold font-size-13">Discount (%)</label>
+                            <input type="number" step="0.5" class="form-control" id="c-discount" value="10" required>
+                        </div>
+                        <div class="form-group col-6">
+                            <label class="font-weight-bold font-size-13">Min Subtotal ($)</label>
+                            <input type="number" class="form-control" id="c-min" value="100" required>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <button type="button" class="btn btn-secondary mr-2" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-woodora-primary px-4">Create Voucher</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function loadCoupons() {
+    fetch('/api/admin/coupons').then(r=>r.json()).then(res => {
+        if (!res.success) return;
+        let html = '';
+        res.coupons.forEach(c => {
+            html += '<tr>' +
+                '<td class="font-weight-bold font-monospace text-woodora-forest font-size-14">' + c.code + '</td>' +
+                '<td class="font-weight-bold text-success">' + c.discount_percent + '% OFF</td>' +
+                '<td>$' + c.min_order_amount.toFixed(2) + '</td>' +
+                '<td>' + (c.is_active ? '<span class="badge badge-success">Active</span>' : '<span class="badge badge-secondary">Inactive</span>') + '</td>' +
+                '<td>' + (c.expires_at ? c.expires_at.substring(0, 10) : '2028-12-31') + '</td>' +
+                '<td>' +
+                    '<button class="btn btn-sm btn-outline-dark" onclick="toggleCoupon(' + c.id + ', ' + (c.is_active ? 0 : 1) + ')">' +
+                        (c.is_active ? 'Deactivate' : 'Activate') +
+                    '</button>' +
+                '</td>' +
+            '</tr>';
+        });
+        document.getElementById('coupons-tbody').innerHTML = html;
+    });
+}
+function toggleCoupon(id, isActive) {
+    fetch('/api/admin/coupons', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id, isActive })
+    }).then(r=>r.json()).then(res => {
+        if (res.success) loadCoupons();
+    });
+}
+function createCoupon(e) {
+    e.preventDefault();
+    const body = {
+        code: document.getElementById('c-code').value,
+        discountPercent: parseFloat(document.getElementById('c-discount').value),
+        minOrderAmount: parseFloat(document.getElementById('c-min').value)
+    };
+    fetch('/api/admin/coupons', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+    }).then(r=>r.json()).then(res => {
+        if (res.success) {
+            $('#addCouponModal').modal('hide');
+            loadCoupons();
+            alert('New coupon ' + body.code + ' is now live.');
+        }
+    });
+}
+document.addEventListener('DOMContentLoaded', loadCoupons);
+</script>
+
+</div>
+
+<script src="assets/js/jquery-3.7.1.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script>
+function adminLogout() {
+    sessionStorage.removeItem('woodora_admin_token');
+    window.location.href = 'admin-login.html';
+}
+</script>
+</body>
+</html>
